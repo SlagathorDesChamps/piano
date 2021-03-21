@@ -1,0 +1,239 @@
+* {
+  box-sizing: border-box;
+}
+
+.piano {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+
+
+.divContainer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+.divContainer2 {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 90vw;
+  overflow-x: scroll;
+}
+
+.songNote {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  align-items: flex-end;
+  font-size: 40px;
+  font-family: monospace;
+  font-weight: bold;
+  height: 95px;
+  padding: 10px;
+  border: black solid 1.5px;
+  margin: 10px;
+}
+
+.sharps {
+  color: gray;
+  font-size: 40px;
+  font-family: monospace;
+  font-weight: bold;
+  z-index: 14;
+  width: 200px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  margin-left: 80px;
+  margin-top: -250px;
+}
+
+.keysNumbers {
+  color: lightgray;
+  font-size: 40px;
+  font-family: monospace;
+  font-weight: bold;
+  z-index: 10;
+  width: 475px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  margin-left: 80px;
+  margin-top: -110px;
+  pointer-events: none;
+}
+
+
+.keysNumbers.keys-black {
+    font-size: 15px;
+    height: 60px;
+    margin-left: 240px;
+    width: 240px;
+    margin-top: -205px;
+    pointer-events: none;
+}
+
+.keysNotes {
+  color: gray;
+  font-size: 40px;
+  font-family: monospace;
+  font-weight: bold;
+  z-index: 13;
+  width: 475px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  margin-left: 80px;
+  margin-top: -150px;
+  pointer-events: none;
+}
+
+.keysNotes.keys-white-bemol-diese {
+  font-size: 40px;
+  height: 15px;
+  margin-top: 0px;
+  margin-left: 100px;
+  width: 450px;
+  pointer-events: none;
+}
+
+.keysNotes.keys-black-diese {
+    font-size: 12px;
+    height: 15px;
+    margin-top: -90px;
+    margin-left: 230px;
+    width: 255px;
+    pointer-events: none;
+}
+
+.keysNotes.keys-black-bemol {
+    font-size: 12px;
+    height: 15px;
+    margin-top: 0px;
+    margin-left: 230px;
+    width: 255px;
+    pointer-events: none;
+}
+
+
+
+
+
+
+.white {
+  fill:white;
+  stroke:black;
+  stroke-width:1;
+  cursor:pointer;
+  margin:2px;
+}
+
+.active-right {
+  transition-timing-function: cubic-bezier(0.64, 0.57, 0.67, 1.53);
+transition-duration: 1s;
+  fill:#9e9e9e;
+  stroke:lightblue;
+  cursor:pointer;
+  stroke-width:1;
+  outline: green solid 3px;
+}
+
+.active-wrong {
+  transition-timing-function: cubic-bezier(0.64, 0.57, 0.67, 1.53);
+transition-duration: 1s;
+  fill:#9e9e9e;
+  stroke:lightblue;
+  cursor:pointer;
+  stroke-width:1;
+  outline: red solid 3px;
+}
+
+.black {
+  fill:black;
+  stroke-width:1;
+  cursor:pointer;
+  margin:2px;
+}
+
+.black:hover {
+  fill:#515151;
+  stroke:lightblue;
+  stroke-width:1;
+}
+
+.white:hover {
+  fill:#515151;
+  stroke:lightblue;
+  stroke-width:1;
+}
+
+h3.musicNotes {
+    flex-flow: column-reverse;
+    font-size: 20px;
+    height: 70px;
+    display: flex;
+
+
+}
+
+
+/* element.style {
+    height: 60px;
+    margin-left: 240px;
+    width: 240px;
+} */
+
+.row-normal {
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.row-diese {
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.row-bemol {
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.row-tonalites {
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+
+
+[class^="column-"] {
+  /* flex: 12.5%; */
+  
+  height: 100px;
+}
+
+/* [class^="row-tonalite-"] * {
+  flex: 0.0667%;
+  padding: 5px;
+}
+ */
+
+
+ .row-tonalites>*{
+  flex: 6.66%;
+ }

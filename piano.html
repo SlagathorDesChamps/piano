@@ -1,0 +1,1490 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://unpkg.com/vexflow/releases/vexflow-min.js"></script>
+    <script src="./script.js"></script>
+  </head>
+  <body>
+    <audio data-key="69" id="c_octave1_audio" src="./mp3/middle_c.mp3"></audio>
+    <audio data-key="52" id="c_octave1_sharp_audio" src="./mp3/mid_c_sharp.mp3"></audio>
+    <audio data-key="82" id="d_octave1_audio" src="./mp3/middle_d.mp3"></audio>
+    <audio data-key="53" id="d_octave1_sharp_audio" src="./mp3/mid_d_sharp.mp3"></audio>
+    <audio data-key="84" id="e_octave1_audio" src="./mp3/middle_e.mp3"></audio>
+    <audio data-key="89" id="f_octave1_audio" src="./mp3/middle_f.mp3"></audio>
+    <audio data-key="55" id="f_octave1_sharp_audio" src="./mp3/mid_f_sharp.mp3"></audio>
+    <audio data-key="85" id="g_octave1_audio" src="./mp3/middle_g.mp3"></audio>
+    <audio data-key="56" id="g_octave1_sharp_audio" src="./mp3/mid_g_sharp.mp3"></audio>
+    <audio data-key="73" id="a_octave1_audio" src="./mp3/middle_a.mp3"></audio>
+    <audio data-key="57" id="a_octave1_sharp_audio" src="./mp3/mid_a_sharp.mp3"></audio>
+    <audio data-key="79" id="b_octave1_audio" src="./mp3/middle_b.mp3"></audio>
+    <audio data-key="80" id="b_octave1_audio" src="./mp3/high_c.mp3"></audio>
+    
+  
+      <svg class="piano" height="230" width="100vw">
+          <!-- DO -->
+  <polygon points="200,10 230,10 230,100 245,100 245,220 200,220 200,10" class="white"  id="do" data-key="69"/>
+  
+  <!-- RE -->
+  <polygon points="245,100 260,100 260,10 275,10 275,100 290,100 290,220 245,220 245,100" class="white" data-key="82" id="ré"/>
+  
+  <!-- MI -->
+  <polygon points="305,10 335,10 335,220 290,220 290,100 305,100 305,10" class="white" data-key="84" id="mi"/>
+  
+  <!-- FA -->
+  <polygon points="335,10 365,10 365,100 380,100 380,220 335,220 335,10" class="white" data-key="89" id="fa"/>
+  
+  <!-- SOL -->
+  <polygon points="380,100 395,100 395,10 410,10 410,100 425,100 425,220 380,220 380,100" class="white" data-key="85" id="sol"/>
+  
+  <!-- LA -->
+  <polygon points="425,100 440,100 440,10 455,10 455,100 470,100 470,220 425,220 425,100" class="white" data-key="73" id="la"/>
+  
+  <!-- SI -->
+  <polygon points="470,100 485,100 485,10 515,10 515,220 470,220 470,100" class="white" data-key="79" id="si"/>
+
+  <!-- DO -->
+  <polygon points="515,10 545,10 545,10 560,10 560,220 515,220 515,10" class="white" data-key="80" id="do-end"/>
+  
+  
+  <!-- DO# REb -->
+  <polygon points="230,10 260,10 260,100 230,100 230,10" class="black" data-key="52" id="c_sharp"/>
+
+  <!-- RE# MIb -->
+<polygon points="275,10 305,10 305,100 275,100 275,10" class="black" data-key="53" id="d_sharp"/>
+
+<!--FA#  SOLb-->
+<polygon points="365,10 395,10 395,100 365,100 365,10" class="black" data-key="55" id="f_sharp"/>
+
+<!-- SOL# Lab-->
+<polygon points="410,10 440,10 440,100 410,100 410,10" class="black" data-key="56" id="g_sharp"/>
+
+<!--LA#  Sib-->
+<polygon points="455,10 485,10 485,100 455,100 455,10" class="black" data-key="57" id="a_sharp"/>
+
+
+</svg>
+<!-- 
+<div class="keysNotes">
+  <h3>note</h3>
+  <h3>do</h3>
+    <h3>ré</h3>
+      <h3>mi</h3>
+        <h3>fa</h3> 
+          <h3>sol</h3> 
+            <h3>la</h3>
+            <h3>si</h3>
+            <h3>do</h3>
+            <h3>ré</h3>
+            <h3>mi</h3>
+            <h3>fa</h3>
+            <h3>sol</h3>
+            <h3>la</h3>
+            <h3>si</h3>
+</div>
+ -->
+
+ <div class="keysNotes">
+    <h3>note</h3>
+    <h3 class="musicNotes">do</h3>
+      <h3 class="musicNotes">ré</h3>
+        <h3 class="musicNotes">mi</h3>
+          <h3 class="musicNotes">fa</h3> 
+            <h3 class="musicNotes">sol</h3> 
+              <h3 class="musicNotes">la</h3>
+              <h3 class="musicNotes">si</h3>
+              <h3 class="musicNotes">do</h3>
+  </div>
+
+
+<div id="keysshow" class="keysNumbers">
+  <h3>keys</h3>
+  <h3>E</h3>
+    <h3>R</h3>
+      <h3>T</h3>
+        <h3>Y</h3> 
+          <h3>U</h3> 
+            <h3>I</h3>
+            <h3>O</h3>
+            <h3>P</h3>
+</div>
+
+
+<div id="keysshow" class="keysNumbers keys-black">
+    <h3>4</h3>
+      <h3>5</h3>
+        <h3></h3>
+          <h3>7</h3> 
+            <h3>8</h3> 
+              <h3>9</h3>
+  </div>
+
+
+  <div class="keysNotes keys-black-diese">
+    <h3>do&sharp;</h3>
+      <h3>ré&sharp;</h3>
+        <h3>&nbsp;&nbsp;&nbsp;</h3>
+          <h3>fa&sharp;</h3> 
+            <h3>sol&sharp;</h3> 
+              <h3>la&sharp;</h3>
+  </div>
+
+  <div class="keysNotes keys-black-bemol">
+    <h3>ré&flat;</h3>
+      <h3>mi&flat;</h3>
+        <h3>&nbsp;&nbsp;&nbsp;</h3>
+          <h3>sol&flat;</h3> 
+            <h3>la&flat;</h3> 
+              <h3>si&flat;</h3>
+  </div>
+
+  <div class="keysNotes keys-white-bemol-diese">
+    <h3>&nbsp;&nbsp;&nbsp;&nbsp;</h3>
+    <h3 class="musicNotes">si&sharp;</h3>
+      <h3 class="musicNotes">&nbsp;&nbsp;&nbsp;</h3>
+        <h3 class="musicNotes">fa&flat;</h3>
+          <h3 class="musicNotes">mi&sharp;</h3> 
+          <h3 class="musicNotes">&nbsp;&nbsp;&nbsp;</h3>
+          <h3 class="musicNotes">&nbsp;&nbsp;&nbsp;</h3>
+          <h3 class="musicNotes">do&flat;</h3>
+          <h3 class="musicNotes">si&sharp;</h3>
+  </div>
+
+
+   <div class="row-normal">
+    <div class="column-do"></div>
+    <div class="column-re"></div>
+    <div class="column-mi"></div>
+    <div class="column-fa"></div>
+    <div class="column-sol"></div>
+    <div class="column-la"></div>
+    <div class="column-si"></div>
+    <!-- <div class="column-do-end"></div> -->
+  </div> 
+
+  <div class="row-diese">
+    <div class="column-do"></div>
+    <div class="column-re"></div>
+    <div class="column-mi"></div>
+    <div class="column-fa"></div>
+    <div class="column-sol"></div>
+    <div class="column-la"></div>
+    <div class="column-si"></div>
+    <!-- <div class="column-do-end"></div> -->
+  </div>
+
+
+  <div class="row-bemol">
+    <div class="column-do"></div>
+    <div class="column-re"></div>
+    <div class="column-mi"></div>
+    <div class="column-fa"></div>
+    <div class="column-sol"></div>
+    <div class="column-la"></div>
+    <div class="column-si"></div>
+    <!-- <div class="column-do-end"></div> -->
+  </div>
+
+
+  <div class="row-tonalites major">
+    <div class="column-0"></div>
+    <div class="column-1b"></div>
+    <div class="column-2b"></div>
+    <div class="column-3b"></div>
+    <div class="column-4b"></div>
+    <div class="column-5b"></div>
+    <div class="column-6b"></div>
+    <div class="column-7b"></div>
+    <div class="column-1d"></div>
+    <div class="column-2d"></div>
+    <div class="column-3d"></div>
+    <div class="column-4d"></div>
+    <div class="column-5d"></div>
+    <div class="column-6d"></div>
+    <div class="column-7d"></div>
+  </div>
+<!-- 
+  <div class="row-tonalites minor">
+    <div class="column-7b"></div>
+    <div class="column-6b"></div>
+    <div class="column-5b"></div>
+    <div class="column-4b"></div>
+    <div class="column-3b"></div>
+    <div class="column-2b"></div>
+    <div class="column-1b"></div>
+    <div class="column-0"></div>
+    <div class="column-1#"></div>
+    <div class="column-2#"></div>
+    <div class="column-3#"></div>
+    <div class="column-4#"></div>
+    <div class="column-5#"></div>
+    <div class="column-6#"></div>
+    <div class="column-7#"></div>
+  </div>
+ -->
+
+
+
+ <div class="jeu-1">
+
+  <div class="question-answer-7b question-tonique question-majeur">
+    <p class="question">Quelle est la tonique de la gamme de Do bémol majeur ?</p>
+    <p class="answer">do&flat;</p>
+  </div>
+
+  <div class="question-answer-7b question-mediante question-majeur">
+    <p class="question">Quelle est la médiante de la gamme de Do bémol majeur ?</p>
+    <p class="answer">mi&flat;</p>
+  </div>
+
+  <div class="question-answer-7b question-dominante question-majeur">
+    <p class="question">Quelle est la dominante de la gamme de Do bémol majeur ?</p>
+    <p class="answer">sol&flat;</p>
+  </div>
+
+  <div class="question-answer-7b question-sensible question-majeur">
+    <p class="question">Quelle est la sensible de la gamme de Do bémol majeur ?</p>
+    <p class="answer">si&flat;</p>
+  </div>
+
+  <div class="question-answer-7b question-tonique question-mineur">
+    <p class="question">Quelle est la tonique de la gamme de La bémol mineur ?</p>
+    <p class="answer">la&flat;</p>
+  </div>
+
+  <div class="question-answer-7b question-mediante question-mineur">
+    <p class="question">Quelle est la médiante de la gamme de La bémol mineur ?</p>
+    <p class="answer">do&flat;</p>
+  </div>
+
+  <div class="question-answer-7b question-dominante question-mineur">
+    <p class="question">Quelle est la dominante de la gamme de La bémol mineur ?</p>
+    <p class="answer">mi&flat;</p>
+  </div>
+
+  <div class="question-answer-7b question-sensible question-mineur">
+    <p class="question">Quelle est la sensible de la gamme de La bémol mineur ?</p>
+    <p class="answer">sol&flat;</p>
+  </div>
+
+
+
+
+
+
+  <div class="question-answer-6b question-tonique question-majeur">
+    <p class="question">Quelle est la tonique de la gamme de Sol bémol majeur ?</p>
+    <p class="answer">sol&flat;</p>
+  </div>
+
+  <div class="question-answer-6b question-mediante question-majeur">
+    <p class="question">Quelle est la médiante de la gamme de Sol bémol majeur ?</p>
+    <p class="answer">si&flat;</p>
+  </div>
+
+  <div class="question-answer-6b question-dominante question-majeur">
+    <p class="question">Quelle est la dominante de la gamme de Sol bémol majeur ?</p>
+    <p class="answer">ré&flat;</p>
+  </div>
+
+  <div class="question-answer-6b question-sensible question-majeur">
+    <p class="question">Quelle est la sensible de la gamme de Sol  bémol majeur ?</p>
+    <p class="answer">fa</p>
+  </div>
+
+  <div class="question-answer-6b question-tonique question-mineur">
+    <p class="question">Quelle est la tonique de la gamme de Mi bémol mineur ?</p>
+    <p class="answer">mi&flat;</p>
+  </div>
+
+  <div class="question-answer-6b question-mediante question-mineur">
+    <p class="question">Quelle est la médiante de la gamme de Mi bémol mineur ?</p>
+    <p class="answer">sol&flat;</p>
+  </div>
+
+  <div class="question-answer-6b question-dominante question-mineur">
+    <p class="question">Quelle est la dominante de la gamme de Mi bémol mineur ?</p>
+    <p class="answer">si&flat;</p>
+  </div>
+
+  <div class="question-answer-6b question-sensible question-mineur">
+    <p class="question">Quelle est la sensible de la gamme de Mi bémol mineur ?</p>
+    <p class="answer">ré&flat;</p>
+  </div>
+
+
+
+
+  <div class="question-answer-5b question-tonique question-majeur">
+    <p class="question">Quelle est la tonique de la gamme de Ré bémol majeur ?</p>
+    <p class="answer">ré&flat;</p>
+  </div>
+
+  <div class="question-answer-5b question-mediante question-majeur">
+    <p class="question">Quelle est la médiante de la gamme de Ré bémol majeur ?</p>
+    <p class="answer">fa</p>
+  </div>
+
+  <div class="question-answer-5b question-dominante question-majeur">
+    <p class="question">Quelle est la dominante de la gamme de Ré bémol majeur ?</p>
+    <p class="answer">la&flat;</p>
+  </div>
+
+  <div class="question-answer-5b question-sensible question-majeur">
+    <p class="question">Quelle est la sensible de la gamme de Ré  bémol majeur ?</p>
+    <p class="answer">do</p>
+  </div>
+
+  <div class="question-answer-5b question-tonique question-mineur">
+    <p class="question">Quelle est la tonique de la gamme de Si bémol mineur ?</p>
+    <p class="answer">si&flat;</p>
+  </div>
+
+  <div class="question-answer-5b question-mediante question-mineur">
+    <p class="question">Quelle est la médiante de la gamme de Si bémol mineur ?</p>
+    <p class="answer">ré&flat;</p>
+  </div>
+
+  <div class="question-answer-5b question-dominante question-mineur">
+    <p class="question">Quelle est la dominante de la gamme de Si bémol mineur ?</p>
+    <p class="answer">fa</p>
+  </div>
+
+  <div class="question-answer-5b question-sensible question-mineur">
+    <p class="question">Quelle est la sensible de la gamme de Si bémol mineur ?</p>
+    <p class="answer">la&flat;</p>
+  </div>
+
+
+
+
+   <div class="question-answer-4b question-tonique question-majeur">
+    <p class="question">Quelle est la tonique de la gamme de La bémol majeur ?</p>
+    <p class="answer">la&flat;</p>
+  </div>
+
+  <div class="question-answer-4b question-mediante question-majeur">
+    <p class="question">Quelle est la médiante de la gamme de La bémol majeur ?</p>
+    <p class="answer">do</p>
+  </div>
+
+  <div class="question-answer-4b question-dominante question-majeur">
+    <p class="question">Quelle est la dominante de la gamme de La bémol majeur ?</p>
+    <p class="answer">mi&flat;</p>
+  </div>
+
+  <div class="question-answer-4b question-sensible question-majeur">
+    <p class="question">Quelle est la sensible de la gamme de La  bémol majeur ?</p>
+    <p class="answer">sol</p>
+  </div>
+
+  <div class="question-answer-4b question-tonique question-mineur">
+    <p class="question">Quelle est la tonique de la gamme de Fa mineur ?</p>
+    <p class="answer">fa</p>
+  </div>
+
+  <div class="question-answer-4b question-mediante question-mineur">
+    <p class="question">Quelle est la médiante de la gamme de Fa mineur ?</p>
+    <p class="answer">la&flat;</p>
+  </div>
+
+  <div class="question-answer-4b question-dominante question-mineur">
+    <p class="question">Quelle est la dominante de la gamme de Fa mineur ?</p>
+    <p class="answer">do</p>
+  </div>
+
+  <div class="question-answer-4b question-sensible question-mineur">
+    <p class="question">Quelle est la sensible de la gamme de Fa mineur ?</p>
+    <p class="answer">mi&flat;</p>
+  </div>
+
+
+
+
+
+
+  <div class="question-answer-3b question-tonique question-majeur">
+    <p class="question">Quelle est la tonique de la gamme de Mi bémol majeur ?</p>
+    <p class="answer">mi&flat;</p>
+  </div>
+
+  <div class="question-answer-3b question-mediante question-majeur">
+    <p class="question">Quelle est la médiante de la gamme de Mi bémol majeur ?</p>
+    <p class="answer">sol</p>
+  </div>
+
+  <div class="question-answer-3b question-dominante question-majeur">
+    <p class="question">Quelle est la dominante de la gamme de Mi bémol majeur ?</p>
+    <p class="answer">si&flat;</p>
+  </div>
+
+  <div class="question-answer-3b question-sensible question-majeur">
+    <p class="question">Quelle est la sensible de la gamme de Mi bémol majeur ?</p>
+    <p class="answer">ré</p>
+  </div>
+
+  <div class="question-answer-3b question-tonique question-mineur">
+    <p class="question">Quelle est la tonique de la gamme de Do mineur ?</p>
+    <p class="answer">do</p>
+  </div>
+
+  <div class="question-answer-3b question-mediante question-mineur">
+    <p class="question">Quelle est la médiante de la gamme de Do mineur ?</p>
+    <p class="answer">mi&flat;</p>
+  </div>
+
+  <div class="question-answer-3b question-dominante question-mineur">
+    <p class="question">Quelle est la dominante de la gamme de Do mineur ?</p>
+    <p class="answer">sol</p>
+  </div>
+
+  <div class="question-answer-3b question-sensible question-mineur">
+    <p class="question">Quelle est la sous-tonique de la gamme de Do mineur ?</p>
+    <p class="answer">si&flat;</p>
+  </div>
+
+
+
+
+
+  <div class="question-answer-2b question-tonique question-majeur">
+    <p class="question">Quelle est la tonique de la gamme de Si bémol majeur ?</p>
+    <p class="answer">si&flat;</p>
+  </div>
+
+  <div class="question-answer-2b question-mediante question-majeur">
+    <p class="question">Quelle est la médiante de la gamme de Si bémol majeur ?</p>
+    <p class="answer">ré</p>
+  </div>
+
+  <div class="question-answer-2b question-dominante question-majeur">
+    <p class="question">Quelle est la dominante de la gamme de Si bémol majeur ?</p>
+    <p class="answer">fa</p>
+  </div>
+
+  <div class="question-answer-2b question-sensible question-majeur">
+    <p class="question">Quelle est la sensible de la gamme de Si bémol majeur ?</p>
+    <p class="answer">la</p>
+  </div>
+
+  <div class="question-answer-2b question-tonique question-mineur">
+    <p class="question">Quelle est la tonique de la gamme de Sol mineur ?</p>
+    <p class="answer">sol</p>
+  </div>
+
+  <div class="question-answer-2b question-mediante question-mineur">
+    <p class="question">Quelle est la médiante de la gamme de Sol mineur ?</p>
+    <p class="answer">si&flat;</p>
+  </div>
+
+  <div class="question-answer-2b question-dominante question-mineur">
+    <p class="question">Quelle est la dominante de la gamme de Sol mineur ?</p>
+    <p class="answer">ré</p>
+  </div>
+
+  <div class="question-answer-2b question-sensible question-mineur">
+    <p class="question">Quelle est la sensible de la gamme de Sol mineur ?</p>
+    <p class="answer">fa</p>
+  </div>
+
+
+
+
+
+  <div class="question-answer-1b question-tonique question-majeur">
+    <p class="question">Quelle est la tonique de la gamme de Fa majeur ?</p>
+    <p class="answer">fa</p>
+  </div>
+
+  <div class="question-answer-1b question-mediante question-majeur">
+    <p class="question">Quelle est la médiante de la gamme de Fa majeur ?</p>
+    <p class="answer">la</p>
+  </div>
+
+  <div class="question-answer-1b question-dominante question-majeur">
+    <p class="question">Quelle est la dominante de la gamme de Fa majeur ?</p>
+    <p class="answer">do</p>
+  </div>
+
+  <div class="question-answer-1b question-sensible question-majeur">
+    <p class="question">Quelle est la sensible de la gamme de Fa majeur ?</p>
+    <p class="answer">mi</p>
+  </div>
+
+  <div class="question-answer-1b question-tonique question-mineur">
+    <p class="question">Quelle est la tonique de la gamme de Ré mineur ?</p>
+    <p class="answer">ré</p>
+  </div>
+
+  <div class="question-answer-1b question-mediante question-mineur">
+    <p class="question">Quelle est la médiante de la gamme de Ré mineur ?</p>
+    <p class="answer">fa</p>
+  </div>
+
+  <div class="question-answer-1b question-dominante question-mineur">
+    <p class="question">Quelle est la dominante de la gamme de Ré mineur ?</p>
+    <p class="answer">la</p>
+  </div>
+
+  <div class="question-answer-1b question-sensible question-mineur">
+    <p class="question">Quelle est la sensible de la gamme de Ré mineur ?</p>
+    <p class="answer">do</p>
+  </div>
+
+
+
+
+
+  <div class="question-answer-0 question-tonique question-majeur">
+    <p class="question">Quelle est la tonique de la gamme de Do majeur ?</p>
+    <p class="answer">do</p>
+  </div>
+
+  <div class="question-answer-0 question-mediante question-majeur">
+    <p class="question">Quelle est la médiante de la gamme de Do majeur ?</p>
+    <p class="answer">mi</p>
+  </div>
+
+  <div class="question-answer-0 question-dominante question-majeur">
+    <p class="question">Quelle est la dominante de la gamme de Do majeur ?</p>
+    <p class="answer">sol</p>
+  </div>
+
+  <div class="question-answer-0 question-sensible question-majeur">
+    <p class="question">Quelle est la sensible de la gamme de Do majeur ?</p>
+    <p class="answer">si</p>
+  </div>
+
+  <div class="question-answer-0 question-tonique question-mineur">
+    <p class="question">Quelle est la tonique de la gamme de La mineur ?</p>
+    <p class="answer">la</p>
+  </div>
+
+  <div class="question-answer-0 question-mediante question-mineur">
+    <p class="question">Quelle est la médiante de la gamme de La mineur ?</p>
+    <p class="answer">do</p>
+  </div>
+
+  <div class="question-answer-0 question-dominante question-mineur">
+    <p class="question">Quelle est la dominante de la gamme de La mineur ?</p>
+    <p class="answer">mi</p>
+  </div>
+
+  <div class="question-answer-0 question-sensible question-mineur">
+    <p class="question">Quelle est la sensible de la gamme de La mineur ?</p>
+    <p class="answer">sol</p>
+  </div>
+
+
+
+
+
+  <div class="question-answer-1d question-tonique question-majeur">
+    <p class="question">Quelle est la tonique de la gamme de Sol majeur ?</p>
+    <p class="answer">sol</p>
+  </div>
+
+  <div class="question-answer-1d question-mediante question-majeur">
+    <p class="question">Quelle est la médiante de la gamme de Sol majeur ?</p>
+    <p class="answer">si</p>
+  </div>
+
+  <div class="question-answer-1d question-dominante question-majeur">
+    <p class="question">Quelle est la dominante de la gamme de Sol majeur ?</p>
+    <p class="answer">ré</p>
+  </div>
+
+  <div class="question-answer-1d question-sensible question-majeur">
+    <p class="question">Quelle est la sensible de la gamme de Sol majeur ?</p>
+    <p class="answer">fa&sharp;</p>
+  </div>
+
+  <div class="question-answer-1d question-tonique question-mineur">
+    <p class="question">Quelle est la tonique de la gamme de Mi mineur ?</p>
+    <p class="answer">mi</p>
+  </div>
+
+  <div class="question-answer-1d question-mediante question-mineur">
+    <p class="question">Quelle est la médiante de la gamme de Mi mineur ?</p>
+    <p class="answer">sol</p>
+  </div>
+
+  <div class="question-answer-1d question-dominante question-mineur">
+    <p class="question">Quelle est la dominante de la gamme de Mi mineur ?</p>
+    <p class="answer">si</p>
+  </div>
+
+  <div class="question-answer-1d question-sensible question-mineur">
+    <p class="question">Quelle est la sensible de la gamme de Mi mineur ?</p>
+    <p class="answer">ré</p>
+  </div>
+
+
+
+
+
+  <div class="question-answer-2d question-tonique question-majeur">
+    <p class="question">Quelle est la tonique de la gamme de Ré majeur ?</p>
+    <p class="answer">ré</p>
+  </div>
+
+  <div class="question-answer-2d question-mediante question-majeur">
+    <p class="question">Quelle est la médiante de la gamme de Ré majeur ?</p>
+    <p class="answer">fa&sharp;</p>
+  </div>
+
+  <div class="question-answer-2d question-dominante question-majeur">
+    <p class="question">Quelle est la dominante de la gamme de Ré majeur ?</p>
+    <p class="answer">la</p>
+  </div>
+
+  <div class="question-answer-2d question-sensible question-majeur">
+    <p class="question">Quelle est la sensible de la gamme de Ré majeur ?</p>
+    <p class="answer">do&sharp;</p>
+  </div>
+
+  <div class="question-answer-2d question-tonique question-mineur">
+    <p class="question">Quelle est la tonique de la gamme de Si mineur ?</p>
+    <p class="answer">si</p>
+  </div>
+
+  <div class="question-answer-2d question-mediante question-mineur">
+    <p class="question">Quelle est la médiante de la gamme de Si mineur ?</p>
+    <p class="answer">ré</p>
+  </div>
+
+  <div class="question-answer-2d question-dominante question-mineur">
+    <p class="question">Quelle est la dominante de la gamme de Si mineur ?</p>
+    <p class="answer">fa&sharp;</p>
+  </div>
+
+  <div class="question-answer-2d question-sensible question-mineur">
+    <p class="question">Quelle est la sensible de la gamme de Si mineur ?</p>
+    <p class="answer">la</p>
+  </div>
+
+
+
+
+
+
+  <div class="question-answer-3d question-tonique question-majeur">
+    <p class="question">Quelle est la tonique de la gamme de La majeur ?</p>
+    <p class="answer">la</p>
+  </div>
+
+  <div class="question-answer-3d question-mediante question-majeur">
+    <p class="question">Quelle est la médiante de la gamme de La majeur ?</p>
+    <p class="answer">do&sharp;</p>
+  </div>
+
+  <div class="question-answer-3d question-dominante question-majeur">
+    <p class="question">Quelle est la dominante de la gamme de La majeur ?</p>
+    <p class="answer">mi</p>
+  </div>
+
+  <div class="question-answer-3d question-sensible question-majeur">
+    <p class="question">Quelle est la sensible de la gamme de La majeur ?</p>
+    <p class="answer">sol&sharp;</p>
+  </div>
+
+  <div class="question-answer-3d question-tonique question-mineur">
+    <p class="question">Quelle est la tonique de la gamme de Fa dièse mineur ?</p>
+    <p class="answer">fa&sharp;</p>
+  </div>
+
+  <div class="question-answer-3d question-mediante question-mineur">
+    <p class="question">Quelle est la médiante de la gamme de Fa dièse mineur ?</p>
+    <p class="answer">la</p>
+  </div>
+
+  <div class="question-answer-3d question-dominante question-mineur">
+    <p class="question">Quelle est la dominante de la gamme de Fa dièse mineur ?</p>
+    <p class="answer">do&sharp;</p>
+  </div>
+
+  <div class="question-answer-3d question-sensible question-mineur">
+    <p class="question">Quelle est la sensible de la gamme de Fa dièse mineur ?</p>
+    <p class="answer">mi</p>
+  </div>
+
+
+
+
+
+  <div class="question-answer-4d question-tonique question-majeur">
+    <p class="question">Quelle est la tonique de la gamme de Mi majeur ?</p>
+    <p class="answer">mi</p>
+  </div>
+
+  <div class="question-answer-4d question-mediante question-majeur">
+    <p class="question">Quelle est la médiante de la gamme de Mi majeur ?</p>
+    <p class="answer">sol&sharp;</p>
+  </div>
+
+  <div class="question-answer-4d question-dominante question-majeur">
+    <p class="question">Quelle est la dominante de la gamme de Mi majeur ?</p>
+    <p class="answer">si</p>
+  </div>
+
+  <div class="question-answer-4d question-sensible question-majeur">
+    <p class="question">Quelle est la sensible de la gamme de Mi majeur ?</p>
+    <p class="answer">ré&sharp;</p>
+  </div>
+
+  <div class="question-answer-4d question-tonique question-mineur">
+    <p class="question">Quelle est la tonique de la gamme de Do dièse mineur ?</p>
+    <p class="answer">do&sharp;</p>
+  </div>
+
+  <div class="question-answer-4d question-mediante question-mineur">
+    <p class="question">Quelle est la médiante de la gamme de Do dièse mineur ?</p>
+    <p class="answer">mi</p>
+  </div>
+
+  <div class="question-answer-4d question-dominante question-mineur">
+    <p class="question">Quelle est la dominante de la gamme de Do dièse mineur ?</p>
+    <p class="answer">sol&sharp;</p>
+  </div>
+
+  <div class="question-answer-4d question-sensible question-mineur">
+    <p class="question">Quelle est la sensible de la gamme de Do dièse mineur ?</p>
+    <p class="answer">si</p>
+  </div>
+
+
+
+
+  <div class="question-answer-5d question-tonique question-majeur">
+    <p class="question">Quelle est la tonique de la gamme de Si majeur ?</p>
+    <p class="answer">si</p>
+  </div>
+
+  <div class="question-answer-5d question-mediante question-majeur">
+    <p class="question">Quelle est la médiante de la gamme de Si majeur ?</p>
+    <p class="answer">ré&sharp;</p>
+  </div>
+
+  <div class="question-answer-5d question-dominante question-majeur">
+    <p class="question">Quelle est la dominante de la gamme de Si majeur ?</p>
+    <p class="answer">fa&sharp;</p>
+  </div>
+
+  <div class="question-answer-5d question-sensible question-majeur">
+    <p class="question">Quelle est la sensible de la gamme de Si majeur ?</p>
+    <p class="answer">la&sharp;</p>
+  </div>
+
+  <div class="question-answer-5d question-tonique question-mineur">
+    <p class="question">Quelle est la tonique de la gamme de Sol dièse mineur ?</p>
+    <p class="answer">sol&sharp;</p>
+  </div>
+
+  <div class="question-answer-5d question-mediante question-mineur">
+    <p class="question">Quelle est la médiante de la gamme de Sol dièse mineur ?</p>
+    <p class="answer">si</p>
+  </div>
+
+  <div class="question-answer-5d question-dominante question-mineur">
+    <p class="question">Quelle est la dominante de la gamme de Sol dièse mineur ?</p>
+    <p class="answer">ré&sharp;</p>
+  </div>
+
+  <div class="question-answer-5d question-sensible question-mineur">
+    <p class="question">Quelle est la sensible de la gamme de Sol dièse mineur ?</p>
+    <p class="answer">fa&sharp;</p>
+  </div>
+
+
+
+
+
+  <div class="question-answer-6d question-tonique question-majeur">
+    <p class="question">Quelle est la tonique de la gamme de Fa dièse majeur ?</p>
+    <p class="answer">fa&sharp;</p>
+  </div>
+
+  <div class="question-answer-6d question-mediante question-majeur">
+    <p class="question">Quelle est la médiante de la gamme de Fa dièse majeur ?</p>
+    <p class="answer">la&sharp;</p>
+  </div>
+
+  <div class="question-answer-6d question-dominante question-majeur">
+    <p class="question">Quelle est la dominante de la gamme de Fa dièse majeur ?</p>
+    <p class="answer">do&sharp;</p>
+  </div>
+
+  <div class="question-answer-6d question-sensible question-majeur">
+    <p class="question">Quelle est la sensible de la gamme de Fa dièse majeur ?</p>
+    <p class="answer">mi&sharp;</p>
+  </div>
+
+  <div class="question-answer-6d question-tonique question-mineur">
+    <p class="question">Quelle est la tonique de la gamme de Ré dièse mineur ?</p>
+    <p class="answer">ré&sharp;</p>
+  </div>
+
+  <div class="question-answer-6d question-mediante question-mineur">
+    <p class="question">Quelle est la médiante de la gamme de Ré dièse mineur ?</p>
+    <p class="answer">fa&sharp;</p>
+  </div>
+
+  <div class="question-answer-6d question-dominante question-mineur">
+    <p class="question">Quelle est la dominante de la gamme de Ré dièse mineur ?</p>
+    <p class="answer">la&sharp;</p>
+  </div>
+
+  <div class="question-answer-6d question-sensible question-mineur">
+    <p class="question">Quelle est la sensible de la gamme de Ré dièse mineur ?</p>
+    <p class="answer">do&sharp;</p>
+  </div>
+
+
+
+
+  <div class="question-answer-7d question-tonique question-majeur">
+    <p class="question">Quelle est la tonique de la gamme de Do dièse majeur ?</p>
+    <p class="answer">do&sharp;</p>
+  </div>
+
+  <div class="question-answer-7d question-mediante question-majeur">
+    <p class="question">Quelle est la médiante de la gamme de Do dièse majeur ?</p>
+    <p class="answer">mi&sharp;</p>
+  </div>
+
+  <div class="question-answer-7d question-dominante question-majeur">
+    <p class="question">Quelle est la dominante de la gamme de Do dièse majeur ?</p>
+    <p class="answer">sol&sharp;</p>
+  </div>
+
+  <div class="question-answer-7d question-sensible question-majeur">
+    <p class="question">Quelle est la sensible de la gamme de Do dièse majeur ?</p>
+    <p class="answer">si&sharp;</p>
+  </div>
+
+  <div class="question-answer-7d question-tonique question-mineur">
+    <p class="question">Quelle est la tonique de la gamme de La dièse mineur ?</p>
+    <p class="answer">la&sharp;</p>
+  </div>
+
+  <div class="question-answer-7d question-mediante question-mineur">
+    <p class="question">Quelle est la médiante de la gamme de La dièse mineur ?</p>
+    <p class="answer">do&sharp;</p>
+  </div>
+
+  <div class="question-answer-7d question-dominante question-mineur">
+    <p class="question">Quelle est la dominante de la gamme de La dièse mineur ?</p>
+    <p class="answer">mi&sharp;</p>
+  </div>
+
+  <div class="question-answer-7d question-sensible question-mineur">
+    <p class="question">Quelle est la sensible de la gamme de La dièse mineur ?</p>
+    <p class="answer">sol&sharp;</p>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="jeu-2">
+
+  <div class="question-answer-7b question-majeur">
+    <p class="question">A quelle tonalité appartient la gamme de Do bémol majeur ?</p>
+    <p class="answer">7&flat;</p>
+  </div>
+
+  <div class="question-answer-7b question-mineur">
+    <p class="question">A quelle tonalité appartient la gamme de La bémol mineur ?</p>
+    <p class="answer">7&flat;</p>
+  </div>
+
+
+  <div class="question-answer-6b question-majeur">
+    <p class="question">A quelle tonalité appartient la gamme de Sol bémol majeur ?</p>
+    <p class="answer">6&flat;</p>
+  </div>
+
+  <div class="question-answer-6b question-mineur">
+    <p class="question">A quelle tonalité appartient la gamme de Mi bémol mineur ?</p>
+    <p class="answer">6&flat;</p>
+  </div>
+
+
+  <div class="question-answer-5b question-majeur">
+    <p class="question">A quelle tonalité appartient la gamme de Ré bémol majeur ?</p>
+    <p class="answer">5&flat;</p>
+  </div>
+
+  <div class="question-answer-5b question-mineur">
+    <p class="question">A quelle tonalité appartient la gamme de Si bémol mineur ?</p>
+    <p class="answer">5&flat;</p>
+  </div>
+
+  <div class="question-answer-4b question-majeur">
+    <p class="question">A quelle tonalité appartient la gamme de La bémol majeur ?</p>
+    <p class="answer">4&flat;</p>
+  </div>
+
+  <div class="question-answer-4b question-mineur">
+    <p class="question">A quelle tonalité appartient la gamme de Fa mineur ?</p>
+    <p class="answer">4&flat;</p>
+  </div>
+
+
+  <div class="question-answer-3b question-majeur">
+    <p class="question">A quelle tonalité appartient la gamme de Mi bémol majeur ?</p>
+    <p class="answer">3&flat;</p>
+  </div>
+
+  <div class="question-answer-3b question-mineur">
+    <p class="question">A quelle tonalité appartient la gamme de Do mineur ?</p>
+    <p class="answer">3&flat;</p>
+  </div>
+
+
+  <div class="question-answer-2b question-majeur">
+    <p class="question">A quelle tonalité appartient la gamme de Si bémol majeur ?</p>
+    <p class="answer">2&flat;</p>
+  </div>
+
+  <div class="question-answer-2b question-mineur">
+    <p class="question">A quelle tonalité appartient la gamme de Sol mineur ?</p>
+    <p class="answer">2&flat;</p>
+  </div>
+
+
+  <div class="question-answer-1b question-majeur">
+    <p class="question">A quelle tonalité appartient la gamme de Fa majeur ?</p>
+    <p class="answer">1&flat;</p>
+  </div>
+
+  <div class="question-answer-1b question-mineur">
+    <p class="question">A quelle tonalité appartient la gamme de Ré mineur ?</p>
+    <p class="answer">1&flat;</p>
+  </div>
+
+  <div class="question-answer-0 question-majeur">
+    <p class="question">A quelle tonalité appartient la gamme de Do majeur ?</p>
+    <p class="answer">0</p>
+  </div>
+
+  <div class="question-answer-0 question-mineur">
+    <p class="question">A quelle tonalité appartient la gamme de La mineur ?</p>
+    <p class="answer">0</p>
+  </div>
+
+
+  <div class="question-answer-1d question-majeur">
+    <p class="question">A quelle tonalité appartient la gamme de Sol majeur ?</p>
+    <p class="answer">1&sharp;</p>
+  </div>
+
+  <div class="question-answer-1d question-mineur">
+    <p class="question">A quelle tonalité appartient la gamme de Mi mineur ?</p>
+    <p class="answer">1&sharp;</p>
+  </div>
+
+
+  <div class="question-answer-2d question-majeur">
+    <p class="question">A quelle tonalité appartient la gamme de Ré majeur ?</p>
+    <p class="answer">2&sharp;</p>
+  </div>
+
+  <div class="question-answer-2d question-mineur">
+    <p class="question">A quelle tonalité appartient la gamme de Si mineur ?</p>
+    <p class="answer">2&sharp;</p>
+  </div>
+
+
+  <div class="question-answer-3d question-majeur">
+    <p class="question">A quelle tonalité appartient la gamme de La majeur ?</p>
+    <p class="answer">3&sharp;</p>
+  </div>
+
+  <div class="question-answer-3d question-mineur">
+    <p class="question">A quelle tonalité appartient la gamme de Fa dièse mineur ?</p>
+    <p class="answer">3&sharp;</p>
+  </div>
+
+
+  <div class="question-answer-4d question-majeur">
+    <p class="question">A quelle tonalité appartient la gamme de Mi majeur ?</p>
+    <p class="answer">4&sharp;</p>
+  </div>
+
+
+  <div class="question-answer-4d question-mineur">
+    <p class="question">A quelle tonalité appartient la gamme de Do dièse mineur ?</p>
+    <p class="answer">4&sharp;</p>
+  </div>
+
+  <div class="question-answer-5d question-majeur">
+    <p class="question">A quelle tonalité appartient la gamme de Si majeur ?</p>
+    <p class="answer">5&sharp;</p>
+  </div>
+
+  <div class="question-answer-5d question-mineur">
+    <p class="question">A quelle tonalité appartient la gamme de Sol dièse mineur ?</p>
+    <p class="answer">5&sharp;</p>
+  </div>
+
+
+  <div class="question-answer-6d question-majeur">
+    <p class="question">A quelle tonalité appartient la gamme de Fa majeur ?</p>
+    <p class="answer">6&sharp;</p>
+  </div>
+
+  <div class="question-answer-6d question-mineur">
+    <p class="question">A quelle tonalité appartient la gamme de Ré dièse mineur ?</p>
+    <p class="answer">6&sharp;</p>
+  </div>
+
+  <div class="question-answer-7d question-majeur">
+    <p class="question">A quelle tonalité appartient la gamme de Do majeur ?</p>
+    <p class="answer">7&sharp;</p>
+  </div>
+
+  <div class="question-answer-7d question-mineur">
+    <p class="question">A quelle tonalité appartient la gamme de La dièse mineur ?</p>
+    <p class="answer">7&sharp;</p>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="jeu-3">
+
+    <div class="question-answer-7b">
+      <p class="question">Quelles sont les tonalités de l'armature avec 7&flat; ?</p>
+      <p class="answer">do&flat; et la&flat;</p>
+    </div>
+
+    <div class="question-answer-7b question-majeur">
+      <p class="question">Quelles est la tonalité majeure de l'armature avec 7&flat; ?</p>
+      <p class="answer">do&flat;</p>
+    </div>
+
+    <div class="question-answer-7b question-mineur">
+      <p class="question">Quelles est la tonalité mineure de l'armature avec 7&flat; ?</p>
+      <p class="answer">la&flat;</p>
+    </div>
+
+    <div class="question-answer-6b">
+      <p class="question">Quelles sont les tonalités de l'armature avec 6&flat; ?</p>
+      <p class="answer">sol&flat; et mi&flat;</p>
+    </div>
+
+    <div class="question-answer-6b question-majeur">
+      <p class="question">Quelles est la tonalité majeure de l'armature avec 6&flat; ?</p>
+      <p class="answer">sol&flat;</p>
+    </div>
+
+    <div class="question-answer-6b question-mineur">
+      <p class="question">Quelles est la tonalité mineure de l'armature avec 6&flat; ?</p>
+      <p class="answer">mi&flat;</p>
+    </div>
+
+    <div class="question-answer-5b">
+      <p class="question">Quelles sont les tonalités de l'armature avec 5&flat; ?</p>
+      <p class="answer">ré&flat; et si&flat;</p>
+    </div>
+
+    <div class="question-answer-5b question-majeur">
+      <p class="question">Quelles est la tonalité majeure de l'armature avec 5&flat; ?</p>
+      <p class="answer">ré&flat;</p>
+    </div>
+
+    <div class="question-answer-5b question-mineur">
+      <p class="question">Quelles est la tonalité mineure de l'armature avec 5&flat; ?</p>
+      <p class="answer">si&flat;</p>
+    </div>
+
+    <div class="question-answer-4b">
+      <p class="question">Quelles sont les tonalités de l'armature avec 4&flat; ?</p>
+      <p class="answer">la&flat; et fa</p>
+    </div>
+
+    <div class="question-answer-4b question-majeur">
+      <p class="question">Quelles est la tonalité majeure de l'armature avec 4&flat; ?</p>
+      <p class="answer">la&flat;</p>
+    </div>
+
+    <div class="question-answer-4b question-mineur">
+      <p class="question">Quelles est la tonalité mineure de l'armature avec 4&flat; ?</p>
+      <p class="answer">fa</p>
+    </div>
+
+    <div class="question-answer-3b">
+      <p class="question">Quelles sont les tonalités de l'armature avec 3&flat; ?</p>
+      <p class="answer">mi&flat; et do</p>
+    </div>
+
+    <div class="question-answer-3b question-majeur">
+      <p class="question">Quelles est la tonalité majeure de l'armature avec 3&flat; ?</p>
+      <p class="answer">mi&flat;</p>
+    </div>
+
+    <div class="question-answer-3b question-mineur">
+      <p class="question">Quelles est la tonalité mineure de l'armature avec 3&flat; ?</p>
+      <p class="answer">do</p>
+    </div>
+
+    <div class="question-answer-2b">
+      <p class="question">Quelles sont les tonalités de l'armature avec 2&flat; ?</p>
+      <p class="answer">si&flat; et sol</p>
+    </div>
+
+    <div class="question-answer-2b question-majeur">
+      <p class="question">Quelles est la tonalité majeure de l'armature avec 2&flat; ?</p>
+      <p class="answer">si&flat;</p>
+    </div>
+
+    <div class="question-answer-2b question-mineur">
+      <p class="question">Quelles est la tonalité mineure de l'armature avec 2&flat; ?</p>
+      <p class="answer">sol</p>
+    </div>
+
+    <div class="question-answer-1b">
+      <p class="question">Quelles sont les tonalités de l'armature avec 1&flat; ?</p>
+      <p class="answer">fa et ré"</p>
+    </div>
+
+    <div class="question-answer-1b question-majeur">
+      <p class="question">Quelles est la tonalité majeure de l'armature avec 1&flat; ?</p>
+      <p class="answer">fa</p>
+    </div>
+
+    <div class="question-answer-1b question-mineur">
+      <p class="question">Quelles est la tonalité mineure de l'armature avec 1&flat; ?</p>
+      <p class="answer">ré</p>
+    </div>
+
+    <div class="question-answer-0">
+      <p class="question">Quelles sont les tonalités de l'armature vierge ?</p>
+      <p class="answer">do et la</p>
+    </div>
+
+    <div class="question-answer-0 question-majeur">
+      <p class="question">Quelles est la tonalité majeure de l'armature vierge ?</p>
+      <p class="answer">do</p>
+    </div>
+
+    <div class="question-answer-0 question-mineur">
+      <p class="question">Quelles est la tonalité mineure de l'armature vierge ?</p>
+      <p class="answer">la</p>
+    </div>
+
+    <div class="question-answer-1d">
+      <p class="question">Quelles sont les tonalités de l'armature avec 1&sharp; ?</p>
+      <p class="answer">sol et mi</p>
+    </div>
+
+    <div class="question-answer-1d question-majeur">
+      <p class="question">Quelles est la tonalité majeure de l'armature avec 1&sharp; ?</p>
+      <p class="answer">sol</p>
+    </div>
+
+    <div class="question-answer-1d question-mineur">
+      <p class="question">Quelles est la tonalité mineure de l'armature avec 1&sharp; ?</p>
+      <p class="answer">mi</p>
+    </div>
+
+    <div class="question-answer-2d">
+      <p class="question">Quelles sont les tonalités de l'armature avec 2&sharp; ?</p>
+      <p class="answer">ré et si</p>
+    </div>
+
+    <div class="question-answer-2d question-majeur">
+      <p class="question">Quelles est la tonalité majeure de l'armature avec 2&sharp; ?</p>
+      <p class="answer">ré</p>
+    </div>
+
+    <div class="question-answer-2d question-mineur">
+      <p class="question">Quelles est la tonalité mineure de l'armature avec 2&sharp; ?</p>
+      <p class="answer">si</p>
+    </div>
+
+    <div class="question-answer-3d">
+      <p class="question">Quelles sont les tonalités de l'armature avec 3&sharp; ?</p>
+      <p class="answer">la et fa&sharp;</p>
+    </div>
+
+    <div class="question-answer-3d question-majeur">
+      <p class="question">Quelles est la tonalité majeure de l'armature avec 3&sharp; ?</p>
+      <p class="answer">la</p>
+    </div>
+
+    <div class="question-answer-3d question-mineur">
+      <p class="question">Quelles est la tonalité mineure de l'armature avec 3&sharp; ?</p>
+      <p class="answer">fa&sharp;</p>
+    </div>
+
+    <div class="question-answer-4d">
+      <p class="question">Quelles sont les tonalités de l'armature avec 4&sharp; ?</p>
+      <p class="answer">mi et do&sharp;</p>
+    </div>
+
+    <div class="question-answer-4d question-majeur">
+      <p class="question">Quelles est la tonalité majeure de l'armature avec 4&sharp; ?</p>
+      <p class="answer">mi</p>
+    </div>
+
+    <div class="question-answer-4d question-mineur">
+      <p class="question">Quelles est la tonalité mineure de l'armature avec 4&sharp; ?</p>
+      <p class="answer">do&sharp;</p>
+    </div>
+
+    <div class="question-answer-5d">
+      <p class="question">Quelles sont les tonalités de l'armature avec 5&sharp; ?</p>
+      <p class="answer">si et sol&sharp;</p>
+    </div>
+
+    <div class="question-answer-5d question-majeur">
+      <p class="question">Quelles est la tonalité majeure de l'armature avec 5&sharp; ?</p>
+      <p class="answer">si</p>
+    </div>
+
+    <div class="question-answer-5d question-mineur">
+      <p class="question">Quelles est la tonalité mineure de l'armature avec 5&sharp; ?</p>
+      <p class="answer">sol&sharp;</p>
+    </div>
+
+    <div class="question-answer-6d">
+      <p class="question">Quelles sont les tonalités de l'armature avec 6&sharp; ?</p>
+      <p class="answer">fa&sharp; et ré&sharp;</p>
+    </div>
+
+    <div class="question-answer-6d question-majeur">
+      <p class="question">Quelles est la tonalité majeure de l'armature avec 6&sharp; ?</p>
+      <p class="answer">fa&sharp;</p>
+    </div>
+
+    <div class="question-answer-6d question-mineur">
+      <p class="question">Quelles est la tonalité mineure de l'armature avec 6&sharp; ?</p>
+      <p class="answer">ré&sharp;</p>
+    </div>
+
+    <div class="question-answer-7d">
+      <p class="question">Quelles sont les tonalités de l'armature avec 7&sharp; ?</p>
+      <p class="answer">do&sharp; et la&sharp;</p>
+    </div>
+
+    <div class="question-answer-7d question-majeur">
+      <p class="question">Quelles est la tonalité majeure de l'armature avec 7&sharp; ?</p>
+      <p class="answer">do&sharp;</p>
+    </div>
+
+    <div class="question-answer-7d question-mineur">
+      <p class="question">Quelles est la tonalité mineure de l'armature avec 7&sharp; ?</p>
+      <p class="answer">la&sharp;</p>
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+  <div class="jeu-4">
+
+    <div class="question-answer-7b question-majeur">
+      <p class="question">Quelles sont les différentes notes appartenant à la gamme de Do bémol majeur ?</p>
+      <p class="answer">do&flat;, ré&flat;, mi&flat;, fa&flat;, sol&flat;, la&flat; et si&flat;</p>
+    </div>
+
+    <div class="question-answer-7b question-mineur">
+      <p class="question">Quelles sont les différentes notes appartenant à la gamme de La bémol mineur ?</p>
+      <p class="answer">la&flat;, si&flat;, do&flat;, ré&flat;, mi&flat;, fa&flat; et sol&flat;</p>
+    </div>
+
+
+    <div class="question-answer-6b question-majeur">
+      <p class="question">Quelles sont les différentes notes appartenant à la gamme de Sol bémol majeur ?</p>
+      <p class="answer">sol&flat;, la&flat;, si&flat;, do&flat;, ré&flat;, mi&flat; et fa</p>
+    </div>
+
+    <div class="question-answer-6b question-mineur">
+      <p class="question">Quelles sont les différentes notes appartenant à la gamme de Mi bémol mineur ?</p>
+      <p class="answer">mi&flat;, fa, sol&flat;, la&flat;, si&flat;, do&flat; et ré&flat;</p>
+    </div>
+
+
+    <div class="question-answer-5b question-majeur">
+      <p class="question">Quelles sont les différentes notes appartenant à la gamme de Ré bémol majeur ?</p>
+      <p class="answer">ré&flat;, mi&flat;, fa, sol&flat;, la&flat;, si&flat; et do</p>
+    </div>
+
+    <div class="question-answer-5b question-mineur">
+      <p class="question">Quelles sont les différentes notes appartenant à la gamme de Si bémol mineur ?</p>
+      <p class="answer">si&flat;, do, ré&flat;, mi&flat;, fa, sol&flat; et la&flat;</p>
+    </div>
+
+    <div class="question-answer-4b question-majeur">
+      <p class="question">Quelles sont les différentes notes appartenant à la gamme de La bémol majeur ?</p>
+      <p class="answer">la&flat;, si&flat;, do, ré&flat;, mi&flat;, fa et sol</p>
+    </div>
+
+    <div class="question-answer-4b question-mineur">
+      <p class="question">Quelles sont les différentes notes appartenant à la gamme de Fa mineur ?</p>
+      <p class="answer">fa, sol, la&flat;, si&flat;, do, ré&flat; et mi&flat;</p>
+    </div>
+
+
+    <div class="question-answer-3b question-majeur">
+      <p class="question">Quelles sont les différentes notes appartenant à la gamme de Mi bémol majeur ?</p>
+      <p class="answer">mi&flat;, fa, sol, la&flat;, si&flat;, do et ré</p>
+    </div>
+
+    <div class="question-answer-3b question-mineur">
+      <p class="question">Quelles sont les différentes notes appartenant à la gamme de Do mineur ?</p>
+      <p class="answer">do, ré, mi&flat;, fa, sol, la&flat; et si&flat;</p>
+    </div>
+
+
+    <div class="question-answer-2b question-majeur">
+      <p class="question">Quelles sont les différentes notes appartenant à la gamme de Si bémol majeur ?</p>
+      <p class="answer">si&flat;, do, ré, mi&flat;, fa, sol et la</p>
+    </div>
+
+    <div class="question-answer-2b question-mineur">
+      <p class="question">Quelles sont les différentes notes appartenant à la gamme de Sol mineur ?</p>
+      <p class="answer">sol, la, si&flat;, do, ré, mi&flat; et fa</p>
+    </div>
+
+
+    <div class="question-answer-1b question-majeur">
+      <p class="question">Quelles sont les différentes notes appartenant à la gamme de Fa majeur ?</p>
+      <p class="answer">fa, sol, la, si&flat;, do, ré et mi</p>
+    </div>
+
+    <div class="question-answer-1b question-mineur">
+      <p class="question">Quelles sont les différentes notes appartenant à la gamme de Ré mineur ?</p>
+      <p class="answer">ré, mi, fa, sol, la, si&flat; et do</p>
+    </div>
+
+    <div class="question-answer-0 question-majeur">
+      <p class="question">Quelles sont les différentes notes appartenant à la gamme de Do majeur ?</p>
+      <p class="answer">do, ré, mi, fa, sol, la et si</p>
+    </div>
+
+    <div class="question-answer-0 question-mineur">
+      <p class="question">Quelles sont les différentes notes appartenant à la gamme de La mineur ?</p>
+      <p class="answer">la, si, do, ré, mi, fa et sol</p>
+    </div>
+
+
+    <div class="question-answer-1d question-majeur">
+      <p class="question">Quelles sont les différentes notes appartenant à la gamme de Sol majeur ?</p>
+      <p class="answer">sol, la, si, do, ré, mi et fa&sharp;</p>
+    </div>
+
+    <div class="question-answer-1d question-mineur">
+      <p class="question">Quelles sont les différentes notes appartenant à la gamme de Mi mineur ?</p>
+      <p class="answer">mi, fa&sharp;, sol, la, si, do et ré</p>
+    </div>
+
+
+    <div class="question-answer-2d question-majeur">
+      <p class="question">Quelles sont les différentes notes appartenant à la gamme de Ré majeur ?</p>
+      <p class="answer">ré, mi, fa&sharp;, sol, la, si et do&sharp;</p>
+    </div>
+
+    <div class="question-answer-2d question-mineur">
+      <p class="question">Quelles sont les différentes notes appartenant à la gamme de Si mineur ?</p>
+      <p class="answer">si, do&sharp;, ré, mi, fa&sharp;, sol et la</p>
+    </div>
+
+
+    <div class="question-answer-3d question-majeur">
+      <p class="question">Quelles sont les différentes notes appartenant à la gamme de La majeur ?</p>
+      <p class="answer">la, si, do&sharp;, ré, mi, fa&sharp; et sol&sharp;</p>
+    </div>
+
+    <div class="question-answer-3d question-mineur">
+      <p class="question">Quelles sont les différentes notes appartenant à la gamme de Fa dièse mineur ?</p>
+      <p class="answer">fa&sharp;, sol&sharp;, la, si, do&sharp;, ré et mi</p>
+    </div>
+
+
+    <div class="question-answer-4d question-majeur">
+      <p class="question">Quelles sont les différentes notes appartenant à la gamme de Mi majeur ?</p>
+      <p class="answer">mi, fa&sharp;, sol&sharp;, la, si, do&sharp; et ré&sharp;</p>
+    </div>
+
+
+    <div class="question-answer-4d question-mineur">
+      <p class="question">Quelles sont les différentes notes appartenant à la gamme de Do dièse mineur ?</p>
+      <p class="answer">do&sharp;, ré&sharp;, mi, fa&sharp;, sol&sharp;, la et si</p>
+    </div>
+
+    <div class="question-answer-5d question-majeur">
+      <p class="question">Quelles sont les différentes notes appartenant à la gamme de Si majeur ?</p>
+      <p class="answer">si, do&sharp;, ré&sharp;, mi, fa&sharp;, sol&sharp; et la&sharp;</p>
+    </div>
+
+    <div class="question-answer-5d question-mineur">
+      <p class="question">Quelles sont les différentes notes appartenant à la gamme de Sol dièse mineur ?</p>
+      <p class="answer">sol&sharp;, la&sharp;, si, do&sharp;, ré&sharp;, mi et fa&sharp;</p>
+    </div>
+
+
+    <div class="question-answer-6d question-majeur">
+      <p class="question">Quelles sont les différentes notes appartenant à la gamme de Fa majeur ?</p>
+      <p class="answer">fa&sharp;, sol&sharp;, la&sharp;, si, do&sharp;, ré&sharp; et mi&sharp;</p>
+    </div>
+
+    <div class="question-answer-6d question-mineur">
+      <p class="question">Quelles sont les différentes notes appartenant à la gamme de Ré dièse mineur ?</p>
+      <p class="answer">ré&sharp;, mi&sharp;, fa&sharp;, sol&sharp;, la&sharp;, si et do&sharp;</p>
+    </div>
+
+    <div class="question-answer-7d question-majeur">
+      <p class="question">Quelles sont les différentes notes appartenant à la gamme de Do majeur ?</p>
+      <p class="answer">do&sharp;, ré&sharp;, mi&sharp;, fa&sharp;, sol&sharp;, la&sharp; et si&sharp;</p>
+    </div>
+
+    <div class="question-answer-7d question-mineur">
+      <p class="question">Quelles sont les différentes notes appartenant à la gamme de La dièse mineur ?</p>
+      <p class="answer">la&sharp;, si&sharp;, do&sharp;, ré&sharp;, mi&sharp;, fa&sharp; et sol&sharp;</p>
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+ 
+
+
+    
+  </body>
+</html>
