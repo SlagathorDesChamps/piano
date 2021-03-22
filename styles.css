@@ -237,3 +237,7 @@ h3.musicNotes {
  .row-tonalites>*{
   flex: 6.66%;
  }
+
+ th, td {
+  border: 1px solid black;
+}
