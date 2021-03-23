@@ -9,8 +9,6 @@
   align-items: flex-start;
 }
 
-
-
 .divContainer {
   display: flex;
   flex-flow: row wrap;
@@ -71,14 +69,13 @@
   pointer-events: none;
 }
 
-
 .keysNumbers.keys-black {
-    font-size: 15px;
-    height: 60px;
-    margin-left: 240px;
-    width: 240px;
-    margin-top: -205px;
-    pointer-events: none;
+  font-size: 15px;
+  height: 60px;
+  margin-left: 240px;
+  width: 240px;
+  margin-top: -205px;
+  pointer-events: none;
 }
 
 .keysNotes {
@@ -106,84 +103,76 @@
 }
 
 .keysNotes.keys-black-diese {
-    font-size: 12px;
-    height: 15px;
-    margin-top: -90px;
-    margin-left: 230px;
-    width: 255px;
-    pointer-events: none;
+  font-size: 12px;
+  height: 15px;
+  margin-top: -90px;
+  margin-left: 230px;
+  width: 255px;
+  pointer-events: none;
 }
 
 .keysNotes.keys-black-bemol {
-    font-size: 12px;
-    height: 15px;
-    margin-top: 0px;
-    margin-left: 230px;
-    width: 255px;
-    pointer-events: none;
+  font-size: 12px;
+  height: 15px;
+  margin-top: 0px;
+  margin-left: 230px;
+  width: 255px;
+  pointer-events: none;
 }
 
-
-
-
-
-
 .white {
-  fill:white;
-  stroke:black;
-  stroke-width:1;
-  cursor:pointer;
-  margin:2px;
+  fill: white;
+  stroke: black;
+  stroke-width: 1;
+  cursor: pointer;
+  margin: 2px;
 }
 
 .active-right {
   transition-timing-function: cubic-bezier(0.64, 0.57, 0.67, 1.53);
-transition-duration: 1s;
-  fill:#9e9e9e;
-  stroke:lightblue;
-  cursor:pointer;
-  stroke-width:1;
+  transition-duration: 1s;
+  fill: #9e9e9e;
+  stroke: lightblue;
+  cursor: pointer;
+  stroke-width: 1;
   outline: green solid 3px;
 }
 
 .active-wrong {
   transition-timing-function: cubic-bezier(0.64, 0.57, 0.67, 1.53);
-transition-duration: 1s;
-  fill:#9e9e9e;
-  stroke:lightblue;
-  cursor:pointer;
-  stroke-width:1;
+  transition-duration: 1s;
+  fill: #9e9e9e;
+  stroke: lightblue;
+  cursor: pointer;
+  stroke-width: 1;
   outline: red solid 3px;
 }
 
 .black {
-  fill:black;
-  stroke-width:1;
-  cursor:pointer;
-  margin:2px;
+  fill: black;
+  stroke-width: 1;
+  cursor: pointer;
+  margin: 2px;
 }
 
 .black:hover {
-  fill:#515151;
-  stroke:lightblue;
-  stroke-width:1;
+  fill: #515151;
+  stroke: lightblue;
+  stroke-width: 1;
 }
 
 .white:hover {
-  fill:#515151;
-  stroke:lightblue;
-  stroke-width:1;
+  fill: #515151;
+  stroke: lightblue;
+  stroke-width: 1;
 }
 
 h3.musicNotes {
-    flex-flow: column-reverse;
-    font-size: 20px;
-    height: 70px;
-    display: flex;
-
-
+  flex-flow: column-reverse;
+  font-size: 20px;
+  height: 70px;
+  display: flex;
 }
-
 
 /* element.style {
     height: 60px;
@@ -219,11 +208,9 @@ h3.musicNotes {
   flex-wrap: wrap;
 }
 
-
-
 [class^="column-"] {
   /* flex: 12.5%; */
-  
+
   height: 100px;
 }
 
@@ -233,11 +220,15 @@ h3.musicNotes {
 }
  */
 
-
- .row-tonalites>*{
+.row-tonalites > * {
   flex: 6.66%;
- }
+}
 
- th, td {
+th,
+td {
   border: 1px solid black;
+}
+
+.hidden {
+  display: none;
 }

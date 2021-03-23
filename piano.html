@@ -27,44 +27,44 @@
   
       <svg class="piano" height="230" width="100vw">
           <!-- DO -->
-  <polygon points="200,10 230,10 230,100 245,100 245,220 200,220 200,10" class="white"  id="do" data-key="69"/>
+  <polygon points="200,10 230,10 230,100 245,100 245,220 200,220 200,10" class="white do siD" data-key="69"/>
   
   <!-- RE -->
-  <polygon points="245,100 260,100 260,10 275,10 275,100 290,100 290,220 245,220 245,100" class="white" data-key="82" id="ré"/>
+  <polygon points="245,100 260,100 260,10 275,10 275,100 290,100 290,220 245,220 245,100" class="white ré" data-key="82"/>
   
   <!-- MI -->
-  <polygon points="305,10 335,10 335,220 290,220 290,100 305,100 305,10" class="white" data-key="84" id="mi"/>
+  <polygon points="305,10 335,10 335,220 290,220 290,100 305,100 305,10" class="white mi faB" data-key="84" />
   
   <!-- FA -->
-  <polygon points="335,10 365,10 365,100 380,100 380,220 335,220 335,10" class="white" data-key="89" id="fa"/>
+  <polygon points="335,10 365,10 365,100 380,100 380,220 335,220 335,10" class="white fa miD" data-key="89" />
   
   <!-- SOL -->
-  <polygon points="380,100 395,100 395,10 410,10 410,100 425,100 425,220 380,220 380,100" class="white" data-key="85" id="sol"/>
+  <polygon points="380,100 395,100 395,10 410,10 410,100 425,100 425,220 380,220 380,100" class="white sol" data-key="85" />
   
   <!-- LA -->
-  <polygon points="425,100 440,100 440,10 455,10 455,100 470,100 470,220 425,220 425,100" class="white" data-key="73" id="la"/>
+  <polygon points="425,100 440,100 440,10 455,10 455,100 470,100 470,220 425,220 425,100" class="white la" data-key="73" />
   
   <!-- SI -->
-  <polygon points="470,100 485,100 485,10 515,10 515,220 470,220 470,100" class="white" data-key="79" id="si"/>
+  <polygon points="470,100 485,100 485,10 515,10 515,220 470,220 470,100" class="white si doB" data-key="79" />
 
   <!-- DO -->
-  <polygon points="515,10 545,10 545,10 560,10 560,220 515,220 515,10" class="white" data-key="80" id="do-end"/>
+  <polygon points="515,10 545,10 545,10 560,10 560,220 515,220 515,10" class="white siD do" data-key="80" id="do-end"/>
   
   
   <!-- DO# REb -->
-  <polygon points="230,10 260,10 260,100 230,100 230,10" class="black" data-key="52" id="c_sharp"/>
+  <polygon points="230,10 260,10 260,100 230,100 230,10" class="black doD réB" data-key="52" />
 
   <!-- RE# MIb -->
-<polygon points="275,10 305,10 305,100 275,100 275,10" class="black" data-key="53" id="d_sharp"/>
+<polygon points="275,10 305,10 305,100 275,100 275,10" class="black réD miB" data-key="53" />
 
 <!--FA#  SOLb-->
-<polygon points="365,10 395,10 395,100 365,100 365,10" class="black" data-key="55" id="f_sharp"/>
+<polygon points="365,10 395,10 395,100 365,100 365,10" class="black faD solB" data-key="55" />
 
 <!-- SOL# Lab-->
-<polygon points="410,10 440,10 440,100 410,100 410,10" class="black" data-key="56" id="g_sharp"/>
+<polygon points="410,10 440,10 440,100 410,100 410,10" class="black solD laB" data-key="56" />
 
 <!--LA#  Sib-->
-<polygon points="455,10 485,10 485,100 455,100 455,10" class="black" data-key="57" id="a_sharp"/>
+<polygon points="455,10 485,10 485,100 455,100 455,10" class="black laD siB" data-key="57" />
 
 
 </svg>
@@ -155,7 +155,7 @@
   </div>
 
 
-   <div class="row-normal">
+   <div class="row-normal hidden">
     <div class="column-do"></div>
     <div class="column-re"></div>
     <div class="column-mi"></div>
@@ -166,7 +166,7 @@
     <!-- <div class="column-do-end"></div> -->
   </div> 
 
-  <div class="row-diese">
+  <div class="row-diese hidden">
     <div class="column-do"></div>
     <div class="column-re"></div>
     <div class="column-mi"></div>
@@ -178,7 +178,7 @@
   </div>
 
 
-  <div class="row-bemol">
+  <div class="row-bemol hidden">
     <div class="column-do"></div>
     <div class="column-re"></div>
     <div class="column-mi"></div>
@@ -190,7 +190,7 @@
   </div>
 
 
-  <div class="row-tonalites major">
+  <div class="row-tonalites major hidden">
     <div class="column-0"></div>
     <div class="column-1b"></div>
     <div class="column-2b"></div>
@@ -1485,7 +1485,7 @@
 
 
 
-  <table id="connaissances">
+  <table id="connaissances" class="hidden">
     <caption>Cercle de quintes</caption>
       <tr>
         <th scope="row">Tonalité</th>
