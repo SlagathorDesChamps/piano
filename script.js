@@ -3336,13 +3336,11 @@ $(document).ready(function () {
                 "." + game.currentAnswer[1]
               );
               SecondKey.classList.add("active-right");
-              setTimeout(function () {
-                key.classList.remove("active-wrong");
-                firstKey.classList.remove("active-right");
-                SecondKey.classList.remove("active-right");
-              }, 1500);
               setTimeout(
                 function () {
+                  key.classList.remove("active-wrong");
+                  firstKey.classList.remove("active-right");
+                  SecondKey.classList.remove("active-right");
                   this.getNextQuestion();
                 }.bind(this),
                 1500
@@ -3405,10 +3403,72 @@ $(document).ready(function () {
       );
       document.querySelector(".row-tonalites").classList.add("hidden");
       document.querySelector(".piano").classList.add("hidden");
+      this.keys = null;
     }
 
     checkAnswer(id, key) {
-      //TO DO
+      if (id == "text") {
+      } else if (id == "vexflow") {
+        if (game.currentAnswer.length == 6) {
+          this.checkIndividualAnswer(key, 6);
+        } else if (game.currentAnswer.length == 5) {
+          this.checkIndividualAnswer(key, 5);
+        } else if (game.currentAnswer.length == 4) {
+          this.checkIndividualAnswer(key, 4);
+        } else if (game.currentAnswer.length == 3) {
+          this.checkIndividualAnswer(key, 3);
+        } else if (game.currentAnswer.length == 2) {
+          this.checkIndividualAnswer(key, 2);
+        } else if (game.currentAnswer.length == 1) {
+          if (this.checkIndividualAnswer(key, 1)) {
+            this.score++;
+            setTimeout(
+              function () {
+                document
+                  .querySelectorAll(".active-right")
+                  .forEach((element) => {
+                    element.classList.remove("active-right");
+                    element.firstElementChild.checked = false;
+                  });
+                this.getNextQuestion();
+              }.bind(this),
+              1500
+            );
+          }
+        }
+      }
+    }
+
+    checkIndividualAnswer(key, round) {
+      let find = false;
+      for (let index = 0; index < round; index++) {
+        if (key.id == game.currentAnswer[index]) {
+          game.currentAnswer.splice(index, 1);
+          key.parentElement.classList.add("active-right");
+          find = true;
+        }
+      }
+      if (!find) {
+        key.parentElement.classList.add("active-wrong");
+        for (let index = 0; index < round; index++) {
+          document
+            .querySelector("#" + game.currentAnswer[index])
+            .parentElement.classList.add("active-right");
+        }
+        setTimeout(
+          function () {
+            key.parentElement.classList.remove("active-wrong");
+            key.checked = false;
+            document.querySelectorAll(".active-right").forEach((element) => {
+              element.firstElementChild.checked = false;
+              element.classList.remove("active-right");
+            });
+            this.getNextQuestion();
+          }.bind(this),
+          1500
+        );
+      }
+      return find;
     }
   }
 
@@ -3441,7 +3501,7 @@ $(document).ready(function () {
     game.checkAnswer("vexflow", key);
   }
 
-  game = new Game4(process_jeu_4);
+  game = new Game3(process_jeu_3);
   game.start();
 
   const vexButtons = document.querySelectorAll("input");
