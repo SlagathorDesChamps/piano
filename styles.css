@@ -180,38 +180,44 @@ h3.musicNotes {
     width: 240px;
 } */
 
+[class^="row-"] {
+  /* width: 100vw; */
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  padding: 50px;
+}
+
 .row-normal {
-  width: 100vw;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  /* width: 100vw; */
+  margin-top: 200px;
 }
 
-.row-diese {
+/* .row-diese {
   width: 100vw;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
 }
-
-.row-bemol {
+ */
+/* .row-bemol {
   width: 100vw;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-}
+} */
 
 .row-tonalites {
-  width: 100vw;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  margin-top: 200px;
 }
 
-[class^="column-"] {
+div[class^="column-"],
+div[class*=" column-"] {
   /* flex: 12.5%; */
-
-  height: 100px;
+  display: flex;
+  align-items: center;
+  /*   height: 100px */
+  flex-direction: column-reverse;
 }
 
 /* [class^="row-tonalite-"] * {
@@ -220,10 +226,10 @@ h3.musicNotes {
 }
  */
 
-.row-tonalites > * {
+/* .row-tonalites > * {
   flex: 6.66%;
 }
-
+ */
 th,
 td {
   border: 1px solid black;

@@ -6,6 +6,392 @@ $(document).ready(function () {
   document.querySelector(".jeu-3").classList.add("hidden");
   document.querySelector(".jeu-4").classList.add("hidden");
 
+  VF = Vex.Flow;
+
+  const normal = document.querySelector(".row-normal");
+  const diese = document.querySelector(".row-diese");
+  const bemol = document.querySelector(".row-bemol");
+  const tonalites_major = document.querySelector(".row-tonalites.major");
+  //const tonalites_minor = document.querySelector(".row-tonalites.minor");
+  const vexflows_normal = normal.querySelectorAll("[class^=column-]");
+  const vexflows_diese = diese.querySelectorAll("[class^=column-]");
+  const vexflows_bemol = bemol.querySelectorAll("[class^=column-]");
+  const vexflows_tonalite_major = tonalites_major.querySelectorAll(
+    "[class^=column-]"
+  );
+  //const vexflows_tonalite_minor = tonalites_minor.querySelectorAll("[class^=column-]");
+
+  const notes_normal = [
+    // A quarter-note C.
+    new VF.StaveNote({
+      clef: "treble",
+      keys: ["c/4"],
+      duration: "q",
+    }).addModifier(
+      0,
+      new VF.Annotation("do")
+        .setVerticalJustification(VF.Annotation.VerticalJustify.TOP)
+        .setFont("Arial", "11")
+    ),
+
+    // A quarter-note D.
+    new VF.StaveNote({
+      clef: "treble",
+      keys: ["d/4"],
+      duration: "q",
+    }).addModifier(
+      0,
+      new VF.Annotation("ré")
+        .setVerticalJustification(VF.Annotation.VerticalJustify.TOP)
+        .setFont("Arial", "11")
+    ),
+
+    // A quarter-note E.
+    new VF.StaveNote({
+      clef: "treble",
+      keys: ["e/4"],
+      duration: "q",
+    }).addModifier(
+      0,
+      new VF.Annotation("mi")
+        .setVerticalJustification(VF.Annotation.VerticalJustify.TOP)
+        .setFont("Arial", "11")
+    ),
+
+    // A quarter-note F.
+    new VF.StaveNote({
+      clef: "treble",
+      keys: ["f/4"],
+      duration: "q",
+    }).addModifier(
+      0,
+      new VF.Annotation("fa")
+        .setVerticalJustification(VF.Annotation.VerticalJustify.TOP)
+        .setFont("Arial", "11")
+    ),
+
+    // A quarter-note G.
+    new VF.StaveNote({
+      clef: "treble",
+      keys: ["g/4"],
+      duration: "q",
+    }).addModifier(
+      0,
+      new VF.Annotation("sol")
+        .setVerticalJustification(VF.Annotation.VerticalJustify.TOP)
+        .setFont("Arial", "11")
+    ),
+
+    // A quarter-note A.
+    new VF.StaveNote({
+      clef: "treble",
+      keys: ["a/4"],
+      duration: "q",
+    }).addModifier(
+      0,
+      new VF.Annotation("la")
+        .setVerticalJustification(VF.Annotation.VerticalJustify.TOP)
+        .setFont("Arial", "11")
+    ),
+
+    // A quarter-note B.
+    new VF.StaveNote({
+      clef: "treble",
+      keys: ["b/4"],
+      duration: "q",
+      stem_direction: -1,
+    }).addModifier(
+      0,
+      new VF.Annotation("si")
+        .setVerticalJustification(VF.Annotation.VerticalJustify.TOP)
+        .setFont("Arial", "11")
+    ),
+
+    // A quarter-note C.
+    /*   new VF.StaveNote({clef: "treble", keys: ["c/5"], duration: "q", stem_direction: -1  }).addModifier(
+        0,
+        new VF.Annotation('do').setVerticalJustification(VF.Annotation.VerticalJustify.TOP).setFont('Arial', '11')
+      ), */
+  ];
+
+  const notes_diese = [
+    // A quarter-note C.
+    new VF.StaveNote({ clef: "treble", keys: ["c/4"], duration: "q" })
+      .addAccidental(0, new VF.Accidental("#"))
+      .addModifier(
+        0,
+        new VF.Annotation("do\u266F")
+          .setVerticalJustification(VF.Annotation.VerticalJustify.TOP)
+          .setFont("Arial", "11")
+      ),
+
+    // A quarter-note D.
+    new VF.StaveNote({ clef: "treble", keys: ["d/4"], duration: "q" })
+      .addAccidental(0, new VF.Accidental("#"))
+      .addModifier(
+        0,
+        new VF.Annotation("ré\u266F")
+          .setVerticalJustification(VF.Annotation.VerticalJustify.TOP)
+          .setFont("Arial", "11")
+      ),
+
+    // A quarter-note E.
+    new VF.StaveNote({ clef: "treble", keys: ["e/4"], duration: "q" })
+      .addAccidental(0, new VF.Accidental("#"))
+      .addModifier(
+        0,
+        new VF.Annotation("mi\u266F")
+          .setVerticalJustification(VF.Annotation.VerticalJustify.TOP)
+          .setFont("Arial", "11")
+      ),
+
+    // A quarter-note F.
+    new VF.StaveNote({ clef: "treble", keys: ["f/4"], duration: "q" })
+      .addAccidental(0, new VF.Accidental("#"))
+      .addModifier(
+        0,
+        new VF.Annotation("fa\u266F")
+          .setVerticalJustification(VF.Annotation.VerticalJustify.TOP)
+          .setFont("Arial", "11")
+      ),
+
+    // A quarter-note G.
+    new VF.StaveNote({ clef: "treble", keys: ["g/4"], duration: "q" })
+      .addAccidental(0, new VF.Accidental("#"))
+      .addModifier(
+        0,
+        new VF.Annotation("sol\u266F")
+          .setVerticalJustification(VF.Annotation.VerticalJustify.TOP)
+          .setFont("Arial", "11")
+      ),
+
+    // A quarter-note A.
+    new VF.StaveNote({ clef: "treble", keys: ["a/4"], duration: "q" })
+      .addAccidental(0, new VF.Accidental("#"))
+      .addModifier(
+        0,
+        new VF.Annotation("la\u266F")
+          .setVerticalJustification(VF.Annotation.VerticalJustify.TOP)
+          .setFont("Arial", "11")
+      ),
+
+    // A quarter-note B.
+    new VF.StaveNote({
+      clef: "treble",
+      keys: ["b/4"],
+      duration: "q",
+      stem_direction: -1,
+    })
+      .addAccidental(0, new VF.Accidental("#"))
+      .addModifier(
+        0,
+        new VF.Annotation("si\u266F")
+          .setVerticalJustification(VF.Annotation.VerticalJustify.TOP)
+          .setFont("Arial", "11")
+      ),
+
+    // A quarter-note C.
+    /*     new VF.StaveNote({clef: "treble", keys: ["c/5"], duration: "q", stem_direction: -1}).addAccidental(0, new VF.Accidental('#')).addModifier(
+          0,
+          new VF.Annotation('do\u266F').setVerticalJustification(VF.Annotation.VerticalJustify.TOP).setFont('Arial', '11')
+        ), */
+  ];
+
+  const notes_bemol = [
+    // A quarter-note C.
+    new VF.StaveNote({ clef: "treble", keys: ["c/4"], duration: "q" })
+      .addAccidental(0, new VF.Accidental("b"))
+      .addModifier(
+        0,
+        new VF.Annotation("do\u266D")
+          .setVerticalJustification(VF.Annotation.VerticalJustify.TOP)
+          .setFont("Arial", "11")
+      ),
+
+    // A quarter-note D.
+    new VF.StaveNote({ clef: "treble", keys: ["d/4"], duration: "q" })
+      .addAccidental(0, new VF.Accidental("b"))
+      .addModifier(
+        0,
+        new VF.Annotation("ré\u266D")
+          .setVerticalJustification(VF.Annotation.VerticalJustify.TOP)
+          .setFont("Arial", "11")
+      ),
+
+    // A quarter-note E.
+    new VF.StaveNote({ clef: "treble", keys: ["e/4"], duration: "q" })
+      .addAccidental(0, new VF.Accidental("b"))
+      .addModifier(
+        0,
+        new VF.Annotation("mi\u266D")
+          .setVerticalJustification(VF.Annotation.VerticalJustify.TOP)
+          .setFont("Arial", "11")
+      ),
+
+    // A quarter-note F.
+    new VF.StaveNote({ clef: "treble", keys: ["f/4"], duration: "q" })
+      .addAccidental(0, new VF.Accidental("b"))
+      .addModifier(
+        0,
+        new VF.Annotation("fa\u266D")
+          .setVerticalJustification(VF.Annotation.VerticalJustify.TOP)
+          .setFont("Arial", "11")
+      ),
+
+    // A quarter-note G.
+    new VF.StaveNote({ clef: "treble", keys: ["g/4"], duration: "q" })
+      .addAccidental(0, new VF.Accidental("b"))
+      .addModifier(
+        0,
+        new VF.Annotation("sol\u266D")
+          .setVerticalJustification(VF.Annotation.VerticalJustify.TOP)
+          .setFont("Arial", "11")
+      ),
+
+    // A quarter-note A.
+    new VF.StaveNote({ clef: "treble", keys: ["a/4"], duration: "q" })
+      .addAccidental(0, new VF.Accidental("b"))
+      .addModifier(
+        0,
+        new VF.Annotation("la\u266D")
+          .setVerticalJustification(VF.Annotation.VerticalJustify.TOP)
+          .setFont("Arial", "11")
+      ),
+
+    // A quarter-note B.
+    new VF.StaveNote({
+      clef: "treble",
+      keys: ["b/4"],
+      duration: "q",
+      stem_direction: -1,
+    })
+      .addAccidental(0, new VF.Accidental("b"))
+      .addModifier(
+        0,
+        new VF.Annotation("si\u266D")
+          .setVerticalJustification(VF.Annotation.VerticalJustify.TOP)
+          .setFont("Arial", "11")
+      ),
+
+    // A quarter-note C.
+    /*   new VF.StaveNote({clef: "treble", keys: ["c/5"], duration: "q", stem_direction: -1}).addAccidental(0, new VF.Accidental('b')).addModifier(
+        0,
+        new VF.Annotation('do\u266D').setVerticalJustification(VF.Annotation.VerticalJustify.TOP).setFont('Arial', '11')
+      ), */
+  ];
+
+  const majorKeys = [
+    "C",
+    "F",
+    "Bb",
+    "Eb",
+    "Ab",
+    "Db",
+    "Gb",
+    "Cb",
+    "G",
+    "D",
+    "A",
+    "E",
+    "B",
+    "F#",
+    "C#",
+  ];
+
+  const annotation_tonalites = [
+    "0",
+    "1\u266D",
+    "2\u266D",
+    "3\u266D",
+    "4\u266D",
+    "5\u266D",
+    "6\u266D",
+    "7\u266D",
+    "1\u266F",
+    "2\u266F",
+    "3\u266F",
+    "4\u266F",
+    "5\u266F",
+    "6\u266F",
+    "7\u266F",
+  ];
+
+  /* const minorKeys = [
+    'Am',
+    'Dm',
+    'Gm',
+    'Cm',
+    'Fm',
+    'Bbm',
+    'Ebm',
+    'Abm',
+    'Em',
+    'Bm',
+    'F#m',
+    'C#m',
+    'G#m',
+    'D#m',
+    'A#m',
+  ]; */
+
+  vexflows_normal.forEach(createVexflow, notes_normal);
+  vexflows_diese.forEach(createVexflow, notes_diese);
+  vexflows_bemol.forEach(createVexflow, notes_bemol);
+  vexflows_tonalite_major.forEach(createVexflowSignature, majorKeys);
+  //vexflows_tonalite_minor.forEach(createVexflowSignature,minorKeys);
+
+  function createVexflow(item, index) {
+    // Create an SVG renderer and attach it to the DIV element named "column-".
+    var div = item;
+    var renderer = new VF.Renderer(div, VF.Renderer.Backends.SVG);
+
+    // Configure the rendering context.
+    renderer.resize(100, 100);
+    var context = renderer.getContext();
+    context.setFont("Arial", 10, "").setBackgroundFillStyle("#eed");
+    //context.setViewBox(0, 0, 270, 270);
+
+    // Create a stave of width 100 at position 0, 150 on the canvas
+    var stave = new VF.Stave(0, 0, 100);
+    stave.addClef("treble");
+
+    // Connect it to the rendering context and draw!
+    stave.setContext(context).draw();
+
+    var note = [
+      // A quarter-note C.
+      this[index],
+    ];
+
+    // Create a voice in 4/4 and add the notes from above
+    var voice = new VF.Voice({ num_beats: 1, beat_value: 4 });
+    voice.addTickables(note);
+
+    // Format and justify the notes to 400 pixels.
+    var formatter = new VF.Formatter().joinVoices([voice]).format([voice], 400);
+
+    // Render voice
+    voice.draw(context, stave);
+  }
+
+  function createVexflowSignature(item, index) {
+    // Create an SVG renderer and attach it to the DIV element named "column-".
+    var div = item;
+    var renderer = new VF.Renderer(div, VF.Renderer.Backends.SVG);
+    // Configure the rendering context.
+    renderer.resize(100, 100);
+    var context = renderer.getContext();
+    context.setFont("Arial", 10, "").setBackgroundFillStyle("#eed");
+    var stave = new VF.Stave(0, 0, 100);
+    stave.addClef("treble");
+    stave.setText(annotation_tonalites[index], VF.Modifier.Position.ABOVE);
+
+    stave.setKeySignature(this[index]);
+
+    // Connect it to the rendering context and draw!
+    stave.setContext(context).draw();
+  }
+
   const process_jeu_1 = [
     {
       question: document.querySelector(
@@ -2617,6 +3003,8 @@ $(document).ready(function () {
       this.currentQuestion = this.data[random].question;
       this.currentAnswer = this.data[random].validator;
       this.data.splice(random, 1);
+      console.log(this.currentQuestion);
+      console.log(this.currentAnswer);
     }
 
     start() {
@@ -2638,16 +3026,70 @@ $(document).ready(function () {
       window.removeEventListener("keydown", playSound);
       clearInterval(this.timer);
     }
+
+    checkAnswer(id, key) {
+      // overridé dans ses enfants
+    }
+
+    createVexButtons(classe, values, type) {
+      const children = document.querySelector("." + classe).children;
+      for (let index = 0; index < children.length; index++) {
+        const input = document.createElement("input");
+        input.setAttribute("type", type);
+        input.setAttribute("name", "notes");
+        input.setAttribute("value", values[index]);
+        input.setAttribute("id", values[index]);
+        const label = document.createElement("label");
+        label.setAttribute("for", values[index]);
+        const svg = children[index].children[0];
+        label.appendChild(svg);
+        children[index].appendChild(input);
+        children[index].appendChild(label);
+      }
+    }
   }
 
   class Game1 extends Game {
     constructor(data) {
       super(data);
+      this.createVexButtons(
+        "row-normal",
+        ["do", "ré", "mi", "fa", "sol", "la", "si"],
+        "radio"
+      );
+      this.createVexButtons(
+        "row-diese",
+        ["doD", "réD", "miD", "faD", "solD", "laD", "siD"],
+        "radio"
+      );
+      this.createVexButtons(
+        "row-bemol",
+        ["doB", "réB", "miB", "faB", "solB", "laB", "siB"],
+        "radio"
+      );
+      document.querySelector(".row-tonalites").classList.add("hidden");
     }
 
     checkAnswer(id, key) {
-      if ((id = "text")) {
-      } else if ((id = "vexflow")) {
+      if (id == "text") {
+      } else if (id == "vexflow") {
+        if (key.id == game.currentAnswer) {
+          game.score++;
+          key.parentElement.classList.add("active-right");
+          setTimeout(function () {
+            key.parentElement.classList.remove("active-right");
+            key.checked = false;
+          }, 1500);
+        } else {
+          key.parentElement.classList.add("active-wrong");
+          const key_right = document.querySelector("#" + game.currentAnswer);
+          key_right.parentElement.classList.add("active-right");
+          setTimeout(function () {
+            key_right.parentElement.classList.remove("active-right");
+            key.parentElement.classList.remove("active-wrong");
+            key.checked = false;
+          }, 1500);
+        }
       } else if (id == "piano") {
         if (key.classList.contains(game.currentAnswer)) {
           game.score++;
@@ -2665,22 +3107,192 @@ $(document).ready(function () {
           }, 1500);
         }
       }
-      this.getNextQuestion();
+      setTimeout(
+        function () {
+          this.getNextQuestion();
+        }.bind(this),
+        1500
+      );
     }
   }
   class Game2 extends Game {
-    constructor() {
-      super();
+    constructor(data) {
+      super(data);
+      document.querySelector(".row-normal").classList.add("hidden");
+      document.querySelector(".row-diese").classList.add("hidden");
+      document.querySelector(".row-bemol").classList.add("hidden");
+      document.querySelector(".piano").classList.add("hidden");
+      this.createVexButtons(
+        "row-tonalites",
+        [
+          "0",
+          "1B",
+          "2B",
+          "3B",
+          "4B",
+          "5B",
+          "6B",
+          "7B",
+          "1D",
+          "2D",
+          "3D",
+          "4D",
+          "5D",
+          "6D",
+          "7D",
+        ],
+        "radio"
+      );
+    }
+
+    checkAnswer(id, key) {
+      if (id == "text") {
+      } else if (id == "vexflow") {
+        if (key.id == game.currentAnswer) {
+          game.score++;
+          key.parentElement.classList.add("active-right");
+          setTimeout(function () {
+            key.parentElement.classList.remove("active-right");
+            key.checked = false;
+          }, 1500);
+        } else {
+          key.parentElement.classList.add("active-wrong");
+          const key_right = document.getElementById(game.currentAnswer);
+          key_right.parentElement.classList.add("active-right");
+          setTimeout(function () {
+            key_right.parentElement.classList.remove("active-right");
+            key.parentElement.classList.remove("active-wrong");
+            key.checked = false;
+          }, 1500);
+        }
+      }
+      setTimeout(
+        function () {
+          this.getNextQuestion();
+        }.bind(this),
+        1500
+      );
     }
   }
   class Game3 extends Game {
     constructor(data) {
       super(data);
       this.first_key = null;
+      document.querySelector(".row-tonalites").classList.add("hidden");
+      this.createVexButtons(
+        "row-normal",
+        ["do", "ré", "mi", "fa", "sol", "la", "si"],
+        "checkbox"
+      );
+      this.createVexButtons(
+        "row-diese",
+        ["doD", "réD", "miD", "faD", "solD", "laD", "siD"],
+        "checkbox"
+      );
+      this.createVexButtons(
+        "row-bemol",
+        ["doB", "réB", "miB", "faB", "solB", "laB", "siB"],
+        "checkbox"
+      );
     }
     checkAnswer(id, key) {
       if (id == "text") {
       } else if (id == "vexflow") {
+        if (typeof game.currentAnswer === "string") {
+          if (key.id == game.currentAnswer) {
+            game.score++;
+            key.parentElement.classList.add("active-right");
+            setTimeout(function () {
+              key.parentElement.classList.remove("active-right");
+              key.checked = false;
+            }, 1500);
+          } else {
+            key.parentElement.classList.add("active-wrong");
+            const key_right = document.querySelector("#" + game.currentAnswer);
+            key_right.parentElement.classList.add("active-right");
+            setTimeout(function () {
+              key_right.parentElement.classList.remove("active-right");
+              key.parentElement.classList.remove("active-wrong");
+              key.checked = false;
+            }, 1500);
+          }
+          setTimeout(
+            function () {
+              this.getNextQuestion();
+            }.bind(this),
+            1500
+          );
+        } else {
+          if (game.currentAnswer.length == 2) {
+            if (key.id == game.currentAnswer[0]) {
+              game.currentAnswer.splice(0, 1);
+              key.parentElement.classList.add("active-right");
+              this.first_key = key;
+            } else if (key.id == game.currentAnswer[1]) {
+              game.currentAnswer.splice(1, 1);
+              key.parentElement.classList.add("active-right");
+              this.first_key = key;
+            } else {
+              key.parentElement.classList.add("active-wrong");
+              const firstKey = document.querySelector(
+                "#" + game.currentAnswer[0]
+              );
+              firstKey.parentElement.classList.add("active-right");
+              const SecondKey = document.querySelector(
+                "#" + game.currentAnswer[1]
+              );
+              SecondKey.parentElement.classList.add("active-right");
+              setTimeout(function () {
+                key.parentElement.classList.remove("active-wrong");
+                firstKey.parentElement.classList.remove("active-right");
+                SecondKey.parentElement.classList.remove("active-right");
+                key.checked = false;
+              }, 1500);
+              setTimeout(
+                function () {
+                  this.getNextQuestion();
+                }.bind(this),
+                1500
+              );
+            }
+          } else if (game.currentAnswer.length == 1) {
+            if (key.id == game.currentAnswer[0]) {
+              game.score++;
+              key.parentElement.classList.add("active-right");
+              setTimeout(
+                function () {
+                  this.first_key.parentElement.classList.remove("active-right");
+                  this.first_key.checked = false;
+                  key.parentElement.classList.remove("active-right");
+                  key.checked = false;
+                }.bind(this),
+                1500
+              );
+            } else {
+              key.parentElement.classList.add("active-wrong");
+              const key_right = document.querySelector(
+                "#" + game.currentAnswer
+              );
+              key_right.parentElement.classList.add("active-right");
+              setTimeout(
+                function () {
+                  this.first_key.parentElement.classList.remove("active-right");
+                  this.first_key.checked = false;
+                  key_right.parentElement.classList.remove("active-right");
+                  key.parentElement.classList.remove("active-wrong");
+                  key.checked = false;
+                }.bind(this),
+                1500
+              );
+            }
+            setTimeout(
+              function () {
+                this.getNextQuestion();
+              }.bind(this),
+              1500
+            );
+          }
+        }
       } else if (id == "piano") {
         if (typeof game.currentAnswer === "string") {
           if (key.classList.contains(game.currentAnswer)) {
@@ -2698,7 +3310,12 @@ $(document).ready(function () {
               key.classList.remove("active-wrong");
             }, 1500);
           }
-          this.getNextQuestion();
+          setTimeout(
+            function () {
+              this.getNextQuestion();
+            }.bind(this),
+            1500
+          );
         } else {
           if (game.currentAnswer.length == 2) {
             if (key.classList.contains(game.currentAnswer[0])) {
@@ -2710,6 +3327,7 @@ $(document).ready(function () {
               key.classList.add("active-right");
               this.first_key = key;
             } else {
+              key.classList.add("active-wrong");
               const firstKey = document.querySelector(
                 "." + game.currentAnswer[0]
               );
@@ -2719,10 +3337,16 @@ $(document).ready(function () {
               );
               SecondKey.classList.add("active-right");
               setTimeout(function () {
+                key.classList.remove("active-wrong");
                 firstKey.classList.remove("active-right");
                 SecondKey.classList.remove("active-right");
               }, 1500);
-              this.getNextQuestion();
+              setTimeout(
+                function () {
+                  this.getNextQuestion();
+                }.bind(this),
+                1500
+              );
             }
           } else if (game.currentAnswer.length == 1) {
             if (key.classList.contains(game.currentAnswer[0])) {
@@ -2750,15 +3374,41 @@ $(document).ready(function () {
                 1500
               );
             }
-            this.getNextQuestion();
+            setTimeout(
+              function () {
+                this.getNextQuestion();
+              }.bind(this),
+              1500
+            );
           }
         }
       }
     }
   }
   class Game4 extends Game {
-    constructor() {
-      super();
+    constructor(data) {
+      super(data);
+      this.createVexButtons(
+        "row-normal",
+        ["do", "ré", "mi", "fa", "sol", "la", "si"],
+        "checkbox"
+      );
+      this.createVexButtons(
+        "row-diese",
+        ["doD", "réD", "miD", "faD", "solD", "laD", "siD"],
+        "checkbox"
+      );
+      this.createVexButtons(
+        "row-bemol",
+        ["doB", "réB", "miB", "faB", "solB", "laB", "siB"],
+        "checkbox"
+      );
+      document.querySelector(".row-tonalites").classList.add("hidden");
+      document.querySelector(".piano").classList.add("hidden");
+    }
+
+    checkAnswer(id, key) {
+      //TO DO
     }
   }
 
@@ -2786,391 +3436,16 @@ $(document).ready(function () {
   const keys = document.querySelectorAll("polygon");
   keys.forEach((key) => key.addEventListener("click", playSoundFromClick));
 
-  VF = Vex.Flow;
-
-  const normal = document.querySelector(".row-normal");
-  const diese = document.querySelector(".row-diese");
-  const bemol = document.querySelector(".row-bemol");
-  const tonalites_major = document.querySelector(".row-tonalites.major");
-  //const tonalites_minor = document.querySelector(".row-tonalites.minor");
-  const vexflows_normal = normal.querySelectorAll("[class^=column-]");
-  const vexflows_diese = diese.querySelectorAll("[class^=column-]");
-  const vexflows_bemol = bemol.querySelectorAll("[class^=column-]");
-  const vexflows_tonalite_major = tonalites_major.querySelectorAll(
-    "[class^=column-]"
-  );
-  //const vexflows_tonalite_minor = tonalites_minor.querySelectorAll("[class^=column-]");
-
-  const notes_normal = [
-    // A quarter-note C.
-    new VF.StaveNote({
-      clef: "treble",
-      keys: ["c/4"],
-      duration: "q",
-    }).addModifier(
-      0,
-      new VF.Annotation("do")
-        .setVerticalJustification(VF.Annotation.VerticalJustify.BOTTOM)
-        .setFont("Arial", "11")
-    ),
-
-    // A quarter-note D.
-    new VF.StaveNote({
-      clef: "treble",
-      keys: ["d/4"],
-      duration: "q",
-    }).addModifier(
-      0,
-      new VF.Annotation("ré")
-        .setVerticalJustification(VF.Annotation.VerticalJustify.BOTTOM)
-        .setFont("Arial", "11")
-    ),
-
-    // A quarter-note E.
-    new VF.StaveNote({
-      clef: "treble",
-      keys: ["e/4"],
-      duration: "q",
-    }).addModifier(
-      0,
-      new VF.Annotation("mi")
-        .setVerticalJustification(VF.Annotation.VerticalJustify.BOTTOM)
-        .setFont("Arial", "11")
-    ),
-
-    // A quarter-note F.
-    new VF.StaveNote({
-      clef: "treble",
-      keys: ["f/4"],
-      duration: "q",
-    }).addModifier(
-      0,
-      new VF.Annotation("fa")
-        .setVerticalJustification(VF.Annotation.VerticalJustify.BOTTOM)
-        .setFont("Arial", "11")
-    ),
-
-    // A quarter-note G.
-    new VF.StaveNote({
-      clef: "treble",
-      keys: ["g/4"],
-      duration: "q",
-    }).addModifier(
-      0,
-      new VF.Annotation("sol")
-        .setVerticalJustification(VF.Annotation.VerticalJustify.BOTTOM)
-        .setFont("Arial", "11")
-    ),
-
-    // A quarter-note A.
-    new VF.StaveNote({
-      clef: "treble",
-      keys: ["a/4"],
-      duration: "q",
-    }).addModifier(
-      0,
-      new VF.Annotation("la")
-        .setVerticalJustification(VF.Annotation.VerticalJustify.BOTTOM)
-        .setFont("Arial", "11")
-    ),
-
-    // A quarter-note B.
-    new VF.StaveNote({
-      clef: "treble",
-      keys: ["b/4"],
-      duration: "q",
-      stem_direction: -1,
-    }).addModifier(
-      0,
-      new VF.Annotation("si")
-        .setVerticalJustification(VF.Annotation.VerticalJustify.BOTTOM)
-        .setFont("Arial", "11")
-    ),
-
-    // A quarter-note C.
-    /*   new VF.StaveNote({clef: "treble", keys: ["c/5"], duration: "q", stem_direction: -1  }).addModifier(
-        0,
-        new VF.Annotation('do').setVerticalJustification(VF.Annotation.VerticalJustify.BOTTOM).setFont('Arial', '11')
-      ), */
-  ];
-
-  const notes_diese = [
-    // A quarter-note C.
-    new VF.StaveNote({ clef: "treble", keys: ["c/4"], duration: "q" })
-      .addAccidental(0, new VF.Accidental("#"))
-      .addModifier(
-        0,
-        new VF.Annotation("do\u266F")
-          .setVerticalJustification(VF.Annotation.VerticalJustify.BOTTOM)
-          .setFont("Arial", "11")
-      ),
-
-    // A quarter-note D.
-    new VF.StaveNote({ clef: "treble", keys: ["d/4"], duration: "q" })
-      .addAccidental(0, new VF.Accidental("#"))
-      .addModifier(
-        0,
-        new VF.Annotation("ré\u266F")
-          .setVerticalJustification(VF.Annotation.VerticalJustify.BOTTOM)
-          .setFont("Arial", "11")
-      ),
-
-    // A quarter-note E.
-    new VF.StaveNote({ clef: "treble", keys: ["e/4"], duration: "q" })
-      .addAccidental(0, new VF.Accidental("#"))
-      .addModifier(
-        0,
-        new VF.Annotation("mi\u266F")
-          .setVerticalJustification(VF.Annotation.VerticalJustify.BOTTOM)
-          .setFont("Arial", "11")
-      ),
-
-    // A quarter-note F.
-    new VF.StaveNote({ clef: "treble", keys: ["f/4"], duration: "q" })
-      .addAccidental(0, new VF.Accidental("#"))
-      .addModifier(
-        0,
-        new VF.Annotation("fa\u266F")
-          .setVerticalJustification(VF.Annotation.VerticalJustify.BOTTOM)
-          .setFont("Arial", "11")
-      ),
-
-    // A quarter-note G.
-    new VF.StaveNote({ clef: "treble", keys: ["g/4"], duration: "q" })
-      .addAccidental(0, new VF.Accidental("#"))
-      .addModifier(
-        0,
-        new VF.Annotation("sol\u266F")
-          .setVerticalJustification(VF.Annotation.VerticalJustify.BOTTOM)
-          .setFont("Arial", "11")
-      ),
-
-    // A quarter-note A.
-    new VF.StaveNote({ clef: "treble", keys: ["a/4"], duration: "q" })
-      .addAccidental(0, new VF.Accidental("#"))
-      .addModifier(
-        0,
-        new VF.Annotation("la\u266F")
-          .setVerticalJustification(VF.Annotation.VerticalJustify.BOTTOM)
-          .setFont("Arial", "11")
-      ),
-
-    // A quarter-note B.
-    new VF.StaveNote({
-      clef: "treble",
-      keys: ["b/4"],
-      duration: "q",
-      stem_direction: -1,
-    })
-      .addAccidental(0, new VF.Accidental("#"))
-      .addModifier(
-        0,
-        new VF.Annotation("si\u266F")
-          .setVerticalJustification(VF.Annotation.VerticalJustify.BOTTOM)
-          .setFont("Arial", "11")
-      ),
-
-    // A quarter-note C.
-    /*     new VF.StaveNote({clef: "treble", keys: ["c/5"], duration: "q", stem_direction: -1}).addAccidental(0, new VF.Accidental('#')).addModifier(
-          0,
-          new VF.Annotation('do\u266F').setVerticalJustification(VF.Annotation.VerticalJustify.BOTTOM).setFont('Arial', '11')
-        ), */
-  ];
-
-  const notes_bemol = [
-    // A quarter-note C.
-    new VF.StaveNote({ clef: "treble", keys: ["c/4"], duration: "q" })
-      .addAccidental(0, new VF.Accidental("b"))
-      .addModifier(
-        0,
-        new VF.Annotation("do\u266D")
-          .setVerticalJustification(VF.Annotation.VerticalJustify.BOTTOM)
-          .setFont("Arial", "11")
-      ),
-
-    // A quarter-note D.
-    new VF.StaveNote({ clef: "treble", keys: ["d/4"], duration: "q" })
-      .addAccidental(0, new VF.Accidental("b"))
-      .addModifier(
-        0,
-        new VF.Annotation("ré\u266D")
-          .setVerticalJustification(VF.Annotation.VerticalJustify.BOTTOM)
-          .setFont("Arial", "11")
-      ),
-
-    // A quarter-note E.
-    new VF.StaveNote({ clef: "treble", keys: ["e/4"], duration: "q" })
-      .addAccidental(0, new VF.Accidental("b"))
-      .addModifier(
-        0,
-        new VF.Annotation("mi\u266D")
-          .setVerticalJustification(VF.Annotation.VerticalJustify.BOTTOM)
-          .setFont("Arial", "11")
-      ),
-
-    // A quarter-note F.
-    new VF.StaveNote({ clef: "treble", keys: ["f/4"], duration: "q" })
-      .addAccidental(0, new VF.Accidental("b"))
-      .addModifier(
-        0,
-        new VF.Annotation("fa\u266D")
-          .setVerticalJustification(VF.Annotation.VerticalJustify.BOTTOM)
-          .setFont("Arial", "11")
-      ),
-
-    // A quarter-note G.
-    new VF.StaveNote({ clef: "treble", keys: ["g/4"], duration: "q" })
-      .addAccidental(0, new VF.Accidental("b"))
-      .addModifier(
-        0,
-        new VF.Annotation("sol\u266D")
-          .setVerticalJustification(VF.Annotation.VerticalJustify.BOTTOM)
-          .setFont("Arial", "11")
-      ),
-
-    // A quarter-note A.
-    new VF.StaveNote({ clef: "treble", keys: ["a/4"], duration: "q" })
-      .addAccidental(0, new VF.Accidental("b"))
-      .addModifier(
-        0,
-        new VF.Annotation("la\u266D")
-          .setVerticalJustification(VF.Annotation.VerticalJustify.BOTTOM)
-          .setFont("Arial", "11")
-      ),
-
-    // A quarter-note B.
-    new VF.StaveNote({
-      clef: "treble",
-      keys: ["b/4"],
-      duration: "q",
-      stem_direction: -1,
-    })
-      .addAccidental(0, new VF.Accidental("b"))
-      .addModifier(
-        0,
-        new VF.Annotation("si\u266D")
-          .setVerticalJustification(VF.Annotation.VerticalJustify.BOTTOM)
-          .setFont("Arial", "11")
-      ),
-
-    // A quarter-note C.
-    /*   new VF.StaveNote({clef: "treble", keys: ["c/5"], duration: "q", stem_direction: -1}).addAccidental(0, new VF.Accidental('b')).addModifier(
-        0,
-        new VF.Annotation('do\u266D').setVerticalJustification(VF.Annotation.VerticalJustify.BOTTOM).setFont('Arial', '11')
-      ), */
-  ];
-
-  const majorKeys = [
-    "C",
-    "F",
-    "Bb",
-    "Eb",
-    "Ab",
-    "Db",
-    "Gb",
-    "Cb",
-    "G",
-    "D",
-    "A",
-    "E",
-    "B",
-    "F#",
-    "C#",
-  ];
-
-  const annotation_tonalites = [
-    "0",
-    "1\u266D",
-    "2\u266D",
-    "3\u266D",
-    "4\u266D",
-    "5\u266D",
-    "6\u266D",
-    "7\u266D",
-    "1\u266F",
-    "2\u266F",
-    "3\u266F",
-    "4\u266F",
-    "5\u266F",
-    "6\u266F",
-    "7\u266F",
-  ];
-
-  /* const minorKeys = [
-    'Am',
-    'Dm',
-    'Gm',
-    'Cm',
-    'Fm',
-    'Bbm',
-    'Ebm',
-    'Abm',
-    'Em',
-    'Bm',
-    'F#m',
-    'C#m',
-    'G#m',
-    'D#m',
-    'A#m',
-  ]; */
-
-  vexflows_normal.forEach(createVexflow, notes_normal);
-  vexflows_diese.forEach(createVexflow, notes_diese);
-  vexflows_bemol.forEach(createVexflow, notes_bemol);
-  vexflows_tonalite_major.forEach(createVexflowSignature, majorKeys);
-  //vexflows_tonalite_minor.forEach(createVexflowSignature,minorKeys);
-
-  function createVexflow(item, index) {
-    // Create an SVG renderer and attach it to the DIV element named "column-".
-    var div = item;
-    var renderer = new VF.Renderer(div, VF.Renderer.Backends.SVG);
-
-    // Configure the rendering context.
-    renderer.resize(100, 270);
-    var context = renderer.getContext();
-    context.setFont("Arial", 10, "").setBackgroundFillStyle("#eed");
-
-    // Create a stave of width 100 at position 0, 150 on the canvas
-    var stave = new VF.Stave(0, 150, 100);
-    stave.addClef("treble");
-
-    // Connect it to the rendering context and draw!
-    stave.setContext(context).draw();
-
-    var note = [
-      // A quarter-note C.
-      this[index],
-    ];
-
-    // Create a voice in 4/4 and add the notes from above
-    var voice = new VF.Voice({ num_beats: 1, beat_value: 4 });
-    voice.addTickables(note);
-
-    // Format and justify the notes to 400 pixels.
-    var formatter = new VF.Formatter().joinVoices([voice]).format([voice], 400);
-
-    // Render voice
-    voice.draw(context, stave);
+  function handleVexButton(event) {
+    const key = event.target;
+    game.checkAnswer("vexflow", key);
   }
 
-  function createVexflowSignature(item, index) {
-    // Create an SVG renderer and attach it to the DIV element named "column-".
-    var div = item;
-    var renderer = new VF.Renderer(div, VF.Renderer.Backends.SVG);
-    // Configure the rendering context.
-    renderer.resize(120, 270);
-    var context = renderer.getContext();
-    context.setFont("Arial", 10, "").setBackgroundFillStyle("#eed");
-    var stave = new VF.Stave(0, 150, 120);
-    stave.addClef("treble");
-    stave.setText(annotation_tonalites[index], VF.Modifier.Position.BELOW);
-
-    stave.setKeySignature(this[index]);
-
-    // Connect it to the rendering context and draw!
-    stave.setContext(context).draw();
-  }
-
-  game = new Game3(process_jeu_3);
+  game = new Game4(process_jeu_4);
   game.start();
+
+  const vexButtons = document.querySelectorAll("input");
+  vexButtons.forEach((button) =>
+    button.addEventListener("click", handleVexButton)
+  );
 });
