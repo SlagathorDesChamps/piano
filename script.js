@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelector(".jeu-4").classList.add("hidden");
   document.querySelector(".jeu-5").classList.add("hidden");
   document.querySelector(".piano").classList.remove("hidden");
+  document.querySelector("#connaissances").classList.add("hidden");
 
   VF = Vex.Flow;
 
