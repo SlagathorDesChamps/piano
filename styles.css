@@ -172,7 +172,7 @@ td {
   visibility: hidden;
 }
 
-/* .accordion {
+ .accordion {
   max-width: 400px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border-radius: 15px;
@@ -213,7 +213,7 @@ td {
 
 .accordion__input:checked ~ .accordion__content {
   display: block;
-} */
+} 
 
 .circle-game {
   display: flex;
