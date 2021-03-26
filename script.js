@@ -8,6 +8,14 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelector(".container-piano").classList.remove("hidden");
   document.querySelector("#connaissances").classList.add("hidden");
 
+	/*ici*/
+	$(document).ready(function(){
+		$("body").removeClass("noJS");
+	});
+
+
+
+
   VF = Vex.Flow;
 
   const normal = document.querySelector(".row-normal");

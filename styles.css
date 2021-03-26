@@ -2,6 +2,8 @@
   box-sizing: border-box;
 }
 
+
+
 .container-piano {
   display: flex;
   flex-direction: column;
@@ -433,4 +435,66 @@ td {
 }
 .legend .color-mineur {
   background-color: #d9e8f5;
+}
+
+
+/*Je joue ici*/
+body{
+	background-color: #f0f0f0;
+	font-family: Verdana, sans-serif;
+}
+body.no-js-content {
+		display: none;
+}
+	
+body.noJS .main {
+		display: none;
+}
+	
+body.noJS .no-js-content {
+		display: block;
+	}	
+
+.ligne{
+	display:flex;
+	flex-direction:row;
+	flex-wrap:wrap;
+	justify-content: space-around;
+}
+
+
+.jeu-1{
+	border:5px solid #6EFAFB;
+	border-radius:5px 5px;
+	background-color:#AFFDFD;
+	padding:5px;
+	margin:10px;
+}
+.jeu-2{
+	border:5px solid #F786AA;
+	border-radius:5px 5px;
+	background-color:#FBC5D7;
+	padding:5px;
+	margin:10px;
+}
+.jeu-3{
+	border:5px solid #6F73D2;
+	border-radius:5px 5px;
+	background-color:#A2A4E2;
+	padding:5px;
+	margin:10px;
+}
+.jeu-4{
+	border:5px solid #FC9F5B;
+	border-radius:5px 5px;
+	background-color:#FDC49B;
+	padding:5px;
+	margin:10px;
+}
+.jeu-5{
+	border:5px solid #7BC950;
+	border-radius:5px 5px;
+	background-color:#A0D982;
+	padding:5px;
+	margin:10px;
 }
