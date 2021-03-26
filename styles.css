@@ -14,51 +14,6 @@
   align-items: flex-start;
 }
 
-.divContainer {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-start;
-  align-items: center;
-  width: 100%;
-}
-
-.divContainer2 {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-start;
-  align-items: flex-start;
-  width: 90vw;
-  overflow-x: scroll;
-}
-
-.songNote {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-end;
-  align-items: flex-end;
-  font-size: 40px;
-  font-family: monospace;
-  font-weight: bold;
-  height: 95px;
-  padding: 10px;
-  border: black solid 1.5px;
-  margin: 10px;
-}
-
-.sharps {
-  color: gray;
-  font-size: 40px;
-  font-family: monospace;
-  font-weight: bold;
-  z-index: 14;
-  width: 200px;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  margin-left: 80px;
-  margin-top: -250px;
-}
-
 .keysNumbers {
   color: lightgray;
   font-size: 40px;
@@ -178,14 +133,7 @@ h3.musicNotes {
   display: flex;
 }
 
-/* element.style {
-    height: 60px;
-    margin-left: 240px;
-    width: 240px;
-} */
-
 [class^="row-"] {
-  /* width: 100vw; */
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-around;
@@ -193,23 +141,8 @@ h3.musicNotes {
 }
 
 .row-normal {
-  /* width: 100vw; */
   margin-top: 200px;
 }
-
-/* .row-diese {
-  width: 100vw;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
- */
-/* .row-bemol {
-  width: 100vw;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-} */
 
 .row-tonalites {
   margin-top: 200px;
@@ -227,16 +160,6 @@ div[class^="column-"] * {
   cursor: pointer;
 }
 
-/* [class^="row-tonalite-"] * {
-  flex: 0.0667%;
-  padding: 5px;
-}
- */
-
-/* .row-tonalites > * {
-  flex: 6.66%;
-}
- */
 th,
 td {
   border: 1px solid black;
@@ -484,7 +407,6 @@ td {
   transform: rotate(330deg) translate(70px);
 }
 
-/* basic positioning */
 .legend {
   margin-top: 40px;
   list-style: none;
@@ -502,7 +424,7 @@ td {
   height: 12px;
   margin: 2px;
 }
-/* your colors */
+
 .legend .color-tonalite {
   background-color: #304269;
 }
