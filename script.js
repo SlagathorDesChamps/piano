@@ -3310,6 +3310,7 @@ document.addEventListener("DOMContentLoaded", function () {
   class Game {
     constructor(data) {
       this.score = 0;
+      score.innerText = "Score :" + this.score;
       this.currentQuestion = null;
       this.currentType = null;
       this.currentAnswer = null;
