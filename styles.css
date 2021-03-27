@@ -177,7 +177,22 @@ td {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border-radius: 15px;
   overflow: hidden;
-  background-color: green;
+  
+}
+.accordion.jeu-1{
+	background-color: #6efafb;
+}
+.accordion.jeu-2{
+	background-color: #f786aa;
+}
+.accordion.jeu-3{
+	background-color: #6f73d2;
+}
+.accordion.jeu-4{
+	background-color: #fc9f5b;
+}
+.accordion.jeu-5{
+	background-color: #7bc950;
 }
 
 .accordion__label,
@@ -469,6 +484,10 @@ body.noJS .no-js-content {
 	background-color:#AFFDFD;
 	padding:5px;
 	margin:10px;
+	
+	width: 30%;
+	max-height: 400px;
+	overflow: auto;
 }
 .jeu-2{
 	border:5px solid #F786AA;
@@ -476,6 +495,9 @@ body.noJS .no-js-content {
 	background-color:#FBC5D7;
 	padding:5px;
 	margin:10px;
+	width: 30%;
+	max-height: 400px;
+	overflow: auto;
 }
 .jeu-3{
 	border:5px solid #6F73D2;
@@ -483,6 +505,9 @@ body.noJS .no-js-content {
 	background-color:#A2A4E2;
 	padding:5px;
 	margin:10px;
+	width: 30%;
+	max-height: 400px;
+	overflow: auto;
 }
 .jeu-4{
 	border:5px solid #FC9F5B;
@@ -490,6 +515,9 @@ body.noJS .no-js-content {
 	background-color:#FDC49B;
 	padding:5px;
 	margin:10px;
+	width: 30%;
+	max-height: 400px;
+	overflow: auto;
 }
 .jeu-5{
 	border:5px solid #7BC950;
@@ -497,4 +525,7 @@ body.noJS .no-js-content {
 	background-color:#A0D982;
 	padding:5px;
 	margin:10px;
+	width: 30%;
+	max-height: 400px;
+	overflow: auto;
 }
